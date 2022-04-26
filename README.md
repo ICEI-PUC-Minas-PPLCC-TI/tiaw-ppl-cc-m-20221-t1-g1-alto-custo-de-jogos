@@ -1,8 +1,9 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7702836&assignment_repo_type=AssignmentRepo)
 # Game Exchange (Serviço de troca de jogos)
-“Sim, sim, eu acho justo. Se você medir as horas de entretenimento fornecidas por um videogame, como Demon’s Souls em comparação com qualquer outra forma de entretenimento, acho que é uma comparação muito simples de traçar”, esse é o comentário de Jim Ryan, CEO da Sony, defendendo o aaumento do preço dos jogos.
- 
-O aumento no preço dos games é evidente todos os anos, fatores como impostos, custo de produção e a demanda do mercado, afetam negativamente o consumidor desse tipo de entretenimento. O efeito gerado é justamente o oposto de uma globalização, o videogame acaba centralizado na mão de poucos. Por isso, o projeto é uma oportunidade para todos poderem desfrutar os novos títulos por um preço mais acessível e justo.
+
+Trabalho Interdisciplinar: Aplicações Web (Alto Custo de jogos)
+
+Serviço online de troca de jogos
 
 ## Informações do projeto
 
