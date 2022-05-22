@@ -1,0 +1,70 @@
+
+/* definições do grid e do layout da página*/
+html{
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+div.grid{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+div.grid section.thumbs img{
+    display: inline;
+}
+
+div.grid section.thumbs{
+    display: flex;
+    min-height: 100px;
+}
+
+/* definições básicas dos botões */
+div.buttons{
+    padding: 0%;
+}
+
+.buttons button{
+    position: relative;
+    left: 80%;
+}
+
+/* definição das thumbs e listas*/
+section img{
+    height: 120px;
+    width: 90px;
+    padding: 10px;
+}
+
+/* cores e estilo */
+header{
+    margin: 0px;
+    padding: 5px;
+    background-color: brown;
+}
+
+div section.game-list{
+    color: white;
+    background-color: rgb(56, 56, 56);
+    padding-left: 10px;
+}
+
+div section#thumbs{
+    background-color: rgb(120, 120, 120);
+    padding-left: 10px;
+}
+
+body div.buttons{
+    padding: 10px;
+    background-color: brown;
+}
+
+body div.buttons button{
+    padding: 5px;
+    font-size: 15px;
+}
