@@ -1,3 +1,18 @@
+import cadastro from "./views/cadastro";
+
+window.addEventListener("load", );
+
+
+
+
+
+
+
+
+
+
+
+
 function leDados(){
     let strDados = localStorage.getItem('db');
     let objDados ={};

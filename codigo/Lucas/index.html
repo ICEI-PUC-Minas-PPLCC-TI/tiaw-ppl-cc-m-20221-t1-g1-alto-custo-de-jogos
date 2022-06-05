@@ -9,8 +9,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="container"></header>    
-    <main class="container">    
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="/#">Cadastrar</a></li>
+                <li><a href="/#">Login</a></li>
+                <li><a href="/#">BD_Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <main id="root"  class="container">    
         <div class="row">
             <div class="col cadastro">
                 <h1>Cadastrar mais um usuario</h1>
@@ -21,7 +29,6 @@
                 <label for="email">Digite seu email: </label>
                 <input id="email" type="text"><br>
                 <button  id="enviar">Enviar cadastro</button>
-
             </div>            
         </div>    
         <div class="row">
@@ -36,11 +43,12 @@
         </div>
     </main>
     <footer class="container">
+        coopyright todos os direitos reservados...
         <button id="carregaDados">Carregar dados</button>
         <div id="visor" class="row"></div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
