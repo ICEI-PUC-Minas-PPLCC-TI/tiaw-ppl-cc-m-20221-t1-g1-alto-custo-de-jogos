@@ -6,7 +6,7 @@ const app = express();
 app.use("/estatico", express.static(path.resolve(__dirname, "frontend", "estatico")))
 
 app.get("/*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "index.js"));
+    res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
 
 app.listen(process.env.PORT || 5500, () => console.log("Servidor ligado..."));

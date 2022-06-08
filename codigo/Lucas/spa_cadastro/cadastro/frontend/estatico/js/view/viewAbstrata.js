@@ -1,5 +1,5 @@
 export default class {
-    setTitle(titulo) {
+    escolheTitulo(titulo) {
         document.title = titulo;
     }
 

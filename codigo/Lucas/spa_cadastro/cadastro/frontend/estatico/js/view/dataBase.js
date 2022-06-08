@@ -1,15 +1,23 @@
 import viewAbstrata from "./viewAbstrata.js";
+import localAPI from "../localAPI.js";
+
 
 export default class extends viewAbstrata {
-    constructor() {
+    constructor(root) {
         super();
-        this.setTitle("Base de Dados");       
-    }
-
-    async getHtml() {
-        return `
+        this.escolheTitulo("Base de Dados");    
+        this.root = root;
+        this.root.innerHTML = `
         <strong><p>login - senha - email</p></strong>
-        <button onclick="carregaDados()">Carregar dados do banco de dados</button>`;
-    }    
+        <button class="carrega__dados">Carregar dados do banco de dados</button>`;
+
+        const btnCarregaDados = this.root.querySelector(".carrega__dados");
+
+        btnCarregaDados.addEventListener("click", this._atualizaBD());
+    }
+    //quando eu clico no botao de navegaçao esta como se ele fosse esse btnCarregaDados
+    _atualizaBD() {
+        console.log("oasodkoas");
+    }
 }
 
