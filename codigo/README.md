@@ -6,5 +6,6 @@ Se necessário, descreva neste arquivo aspectos relevantes da estrutura de diret
 
 # Diretórios
 
-Estrutura da pastas
+Estrutura da pastas: 
+
 /codigo (raiz) / integrante / elemento
