@@ -16,8 +16,7 @@ export default class extends viewAbstrata {
                 <button id="enviarLogin">Entrar</button>
             </div>
         </div> 
-        `;
-        
+        `;        
     }
 
     entrar() {

@@ -16,55 +16,17 @@ export default class localAPI {
         objDados.usuarios.push(dados);
         localStorage.setItem('db', JSON.stringify(objDados));
     }
-    // deixar aqui, depois eu vejo
-    static incluirContato() {
-        
-        let objDados = this.leDados();
-    
-        let xLogin = document.getElementById('login').value;
-        let xSenha = document.getElementById('senha').value;
-        let xemail = document.getElementById('email').value;
-        let igual = 0;
-        let novoUsuario = {
-            login: xLogin,
-            senha: xSenha,
-            email: xemail
-        };
-        for(i=0;i<objDados.usuarios.length;i++){
-            if(objDados.usuarios[i].login == xLogin){
-                alert('Ja existe um usuário com esse nome');
-                igual++;
-            }
-            if(objDados.usuarios[i].email == xemail){
-                alert('Ja existe um usuário com esse email');
-                igual++;
-            }
-        }
-        if(igual==0){
-            objDados.usuarios.push(novoUsuario);
-            salvaDados(objDados);
-        }
-    }
 
     static deletarDados(id) {
-        let objDados = this.leDados();
-        let novosDados = objDados();
-    }
-
-    leConta() {
-        let strDados = localStorage.getItem('lg');
-        let objDados = {};
-        objDados = JSON.parse(strDados);
-        return objDados;
-    }
-    
-    salvaLogin(conta, index) {
-        localStorage.setItem('lg', JSON.stringify(conta));
-        localStorage.setItem('i', index);
-    }
-    
-    clearLogin() {
-        localStorage.setItem('lg', null);
-        localStorage.setItem('i', null);
+        const objDados = this.leDados();
+        let novosDados = {usuarios: []};
+        for (let i = 0; i < objDados.usuarios.length; i++) {
+            const element = objDados.usuarios[i].id;
+            if(element == id){}
+            else{
+                novosDados.usuarios.push(objDados.usuarios[i]);
+            }
+        }
+        localStorage.setItem('db', JSON.stringify(novosDados));
     }
 }
