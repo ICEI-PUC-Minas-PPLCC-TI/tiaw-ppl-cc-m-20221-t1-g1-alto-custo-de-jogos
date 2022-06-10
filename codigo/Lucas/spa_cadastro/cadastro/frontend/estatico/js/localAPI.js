@@ -29,4 +29,13 @@ export default class localAPI {
         }
         localStorage.setItem('db', JSON.stringify(novosDados));
     }
+
+    static editarDados(id) {
+        const objDados = this.leDados();
+        objDados.usuarios.forEach(element => {
+            if(element.id == id){
+                console.log("voce editou esse elemento");
+            }
+        });
+    }
 }

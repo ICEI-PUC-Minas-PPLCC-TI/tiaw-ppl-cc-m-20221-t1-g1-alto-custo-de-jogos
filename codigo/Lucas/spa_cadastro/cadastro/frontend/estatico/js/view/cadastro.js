@@ -28,32 +28,34 @@ export default class extends viewAbstrata {
     }
 
     _cadastra(login, senha, email) {
-        const objDados = localAPI.leDados();
         const novoUsuario = {
             id: Math.random() * 100000000,
             login: login.value.trim(),
             senha: senha.value.trim(),
             email: email.value.trim()
-        };
-        let igual = 0;
-        for (let i = 0; i < objDados.usuarios.length; i++) {
-            const element = objDados.usuarios[i];
-            if(element.login == login){
-                alert("Ja existe um usuário com esse nome");
-                igual++;
-            }
-            if(element.email == email){
-                alert("Ja existe um usuário com esse email");
-                igual++;
-            }
-            if(element.id == novoUsuario.id){
-                this._cadastra(login, senha, email);
-                igual++;
-            }
-        }
-        if(igual==0){
+        };       
+        if(this._certificaCadastro(novoUsuario)){
             localAPI.salvaDados(novoUsuario);
         }
     }
 
+    _certificaCadastro(usuario) {
+        const objDados = localAPI.leDados();
+        for (let i = 0; i < objDados.usuarios.length; i++) {
+            const element = objDados.usuarios[i];
+            if(element.login == usuario.login){
+                alert("Ja existe um usuário com esse nome");
+                return false;
+            }
+            if(element.email == usuario.email){
+                alert("Ja existe um usuário com esse email");
+                return false;
+            }
+            if(element.id == usuario.id){
+                this._cadastra(usuario.login, usuario.senha, usuario.email);
+                return false;
+            }
+        }
+        return true;
+    }
 }
