@@ -12,8 +12,16 @@ export default class localAPI {
     }
 
     static salvaDados(dados) {
-        let objDados = this.leDados();
-        objDados.usuarios.push(dados);
+        const objDados = this.leDados();
+        const existe = objDados.usuarios.find(usuario => usuario.id == dados.id);
+        if(existe) {
+            existe.login = dados.login;
+            existe.senha = dados.senha;
+            existe.email = dados.email;
+        }
+        else {
+            objDados.usuarios.push(dados);
+        }
         localStorage.setItem('db', JSON.stringify(objDados));
     }
 
@@ -28,14 +36,5 @@ export default class localAPI {
             }
         }
         localStorage.setItem('db', JSON.stringify(novosDados));
-    }
-
-    static editarDados(id) {
-        const objDados = this.leDados();
-        objDados.usuarios.forEach(element => {
-            if(element.id == id){
-                console.log("voce editou esse elemento");
-            }
-        });
     }
 }

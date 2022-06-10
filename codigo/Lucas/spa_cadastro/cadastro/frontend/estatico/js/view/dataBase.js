@@ -1,7 +1,6 @@
 import viewAbstrata from "./viewAbstrata.js";
 import localAPI from "../localAPI.js";
 
-
 export default class extends viewAbstrata {
     constructor(root) {
         super();
@@ -67,11 +66,26 @@ export default class extends viewAbstrata {
 
     trocaNome(id) {
         const objDados = localAPI.leDados();
+        const i = objDados.usuarios.findIndex(usuario => usuario.id == id);
+        objDados.usuarios[i].login = prompt("Escreva o novo nome do usuario");
+        localAPI.salvaDados(objDados.usuarios[i]);
+        this._atualizaBD();
+    }
 
-        objDados.usuarios.forEach(usuario => {
+    trocaSenha(id) {
+        const objDados = localAPI.leDados();
+        const i = objDados.usuarios.findIndex(usuario => usuario.id == id);
+        objDados.usuarios[i].senha = prompt("Escreva a nova senha do usuario");
+        localAPI.salvaDados(objDados.usuarios[i]);
+        this._atualizaBD();
+    }
 
-        });
-
+    trocaNome(id) {
+        const objDados = localAPI.leDados();
+        const i = objDados.usuarios.findIndex(usuario => usuario.id == id);
+        objDados.usuarios[i].email = prompt("Escreva o novo email do usuario");
+        localAPI.salvaDados(objDados.usuarios[i]);
+        this._atualizaBD();
     }
 }
 

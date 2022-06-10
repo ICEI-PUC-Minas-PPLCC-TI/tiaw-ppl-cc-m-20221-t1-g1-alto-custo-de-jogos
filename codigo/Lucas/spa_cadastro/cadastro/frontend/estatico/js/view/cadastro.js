@@ -10,26 +10,26 @@ export default class extends viewAbstrata {
         <div class="row">
             <div class="col cadastro">
                 <h1>Cadastrar mais um usuario</h1>
-                <label for="login">Digite seu nome de usuário: </label>
-                <input id="login" type="text"><br>               
-                <label for="senha">Digite sua senha: </label>
-                <input id="senha" type="text"><br>            
-                <label for="email">Digite seu email: </label>
-                <input id="email" type="text"><br>
+                <label for="Xlogin">Digite seu nome de usuário: </label>
+                <input id="Xlogin" type="text"><br>               
+                <label for="Xsenha">Digite sua senha: </label>
+                <input id="Xsenha" type="text"><br>            
+                <label for="Xemail">Digite seu email: </label>
+                <input id="Xemail" type="text"><br>
                 <button  id="enviar">Enviar cadastro</button>
             </div>            
         </div>        
         `; 
-        const login = root.querySelector("#login");
-        const senha = root.querySelector("#senha");
-        const email = root.querySelector("#email");
-        const btnCadastro = root.querySelector("#enviar");
+        const login = root.querySelector("#Xlogin");
+        const senha = root.querySelector("#Xsenha");
+        const email = root.querySelector("#Xemail");
+        const btnCadastro = root.querySelector("#Xenviar");
         btnCadastro.addEventListener("click", () => this._cadastra(login, senha, email));
     }
 
     _cadastra(login, senha, email) {
         const novoUsuario = {
-            id: Math.random() * 100000000,
+            id: Math.random() * 10000,
             login: login.value.trim(),
             senha: senha.value.trim(),
             email: email.value.trim()
