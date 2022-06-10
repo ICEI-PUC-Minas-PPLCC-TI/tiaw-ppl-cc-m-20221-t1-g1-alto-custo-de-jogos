@@ -1,6 +1,8 @@
 const form = document.getElementById("form");
 const nome = document.getElementById("nome");
 const idade = document.getElementById("idade");
+const cep = document.getElementById("cep");
+const endereco = document.getElementById("endereco");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -15,6 +17,8 @@ form.addEventListener("submit", (e) => {
 function checkInputs() {
   const nomeValue = nome.value;
   const idadeValue = idade.value;
+  const cepValue = cep.value;
+  const enderecoValue = endereco.value;
   const usernameValue = username.value;
   const emailValue = email.value;
   const passwordValue = password.value;
@@ -30,6 +34,18 @@ function checkInputs() {
     setErrorFor(idade, "A idade é obrigatória.");
   } else {
     setSuccessFor(idade);
+  }
+
+  if (cepValue === "") {
+    setErrorFor(cep, "O nome CEP é obrigatório.");
+  } else {
+    setSuccessFor(cep);
+  }
+
+  if (enderecoValue === "") {
+    setErrorFor(endereco, "O nome endereço é obrigatório.");
+  } else {
+    setSuccessFor(endereco);
   }
 
   if (usernameValue === "") {
