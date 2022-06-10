@@ -25,35 +25,53 @@ export default class extends viewAbstrata {
             strDados += `<div class="usuario" id="${elemento.id}"><p>${elemento.id} - ${elemento.login} - ${elemento.senha} - ${elemento.email}</p></div>`;
         }
         this.root.innerHTML = strDados;
-        //Deletar/Editar usuario 
+        //seleciona o usuario
         document.querySelectorAll(".usuario").forEach(usuario => {
-            usuario.addEventListener("mouseover", elemento => {
-                elemento.target.style.color = "orange";
-                setTimeout(function() {
-                    elemento.target.style.color = "";
-                  }, 500);
+            usuario.addEventListener("mouseenter", elemento => {
+                elemento.target.style.fontSize = "125%";
+            });
+            usuario.addEventListener("mouseleave", elemento => {
+                elemento.target.style.fontSize = "100%";
             });
             usuario.addEventListener("click", () => {
                 const id = usuario.innerText.split('-')[0].trim();
-                console.log(id);
-            });
-            usuario.addEventListener("dblclick", () => {
-                const deletar = confirm("Tem certeza que deseja deletar esse usuario?");
-                if(deletar) {
-                    const id = usuario.innerText.split('-')[0].trim();
-                    localAPI.deletarDados(id);
-                    this._atualizaBD();
-                }
+                document.querySelectorAll('.selecionado').forEach(element => {
+                    element.remove();
+                });
+                this._selecionado(id, objDados);
             });
         });
     }
 
-    _selecionado(id, objDados){
-        objDados.usuarios.forEach(elemento => {
-            if(elemento.id == id) {
-                //o elemento que combinar vai poder ser alterado o email, senha ou nome do usuario
-            }
+    _selecionado(id){
+        const htmlDoUsuario = document.getElementById(id);
+        htmlDoUsuario.insertAdjacentHTML('beforeend', `<button id="trocarUsuario" class="selecionado">Mudar usuario</button><button id="trocarSenha" class="selecionado">Mudar senha</button><button id="trocarEmail" class="selecionado">Mudar email</button><button id="deletar" class="selecionado">Deletar</button>`);
+        //Deleta usuario
+        const btnDeletar = document.querySelector("#deletar");
+        btnDeletar.addEventListener("click", () => {
+            const deletar = confirm("Tem certeza que deseja deletar esse usuario?");
+                if(deletar) {
+                    localAPI.deletarDados(id);
+                    this._atualizaBD();
+                }
         });
+        //Trocar nome do usuario
+        const btnTrocaNome = document.querySelector("#trocarUsuario");
+        btnTrocaNome.addEventListener("click", () => this.trocaNome(id));
+        //Trocar senha do usuario
+        const btnTrocaSenha = document.querySelector("#trocarSenha");
+
+        //Trocar email do usuario
+        const btnEmail = document.querySelector("#trocarEmail");
+    }
+
+    trocaNome(id) {
+        const objDados = localAPI.leDados();
+
+        objDados.usuarios.forEach(usuario => {
+
+        });
+
     }
 }
 
