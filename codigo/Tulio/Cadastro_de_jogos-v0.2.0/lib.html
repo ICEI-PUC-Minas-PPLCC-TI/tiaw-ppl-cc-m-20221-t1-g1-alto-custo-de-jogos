@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Biblioteca</title>
+        <link rel="styleSheet" href="libStyle.css">
+        <script src="handler.js"></script>
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <header><h1>Biblioteca</h1></header>
+        
+        <!-- estrtura básica do site -->
+        <div class="grid">
+            <section class="game-list">
+                <h3>Lista</h3>
+                <ul id="list">
+                </ul>
+            </section>
+    
+            <section id="thumbs">
+                <h3>Jogos</h3>
+            </section>
+        </div>
+        
+        <!-- sub-menu -->
+        <div class="sub-menu">
+            <!-- div da classe do menu-->
+            <div></div>
+            <!---->
+            <h3>Cadastre seu jogo</h3>
+            <div class="name-input">
+                <h3>Nome</h3>
+                <!-- div para checagem de estado -->
+                <div id="state-check"></div>
+                <!---->
+                <input class="name-field" type="text" placeholder="ex: Sonic Mania">
+            </div>
+            <div class="platform-input">
+                <h3>Plataforma</h3>
+                <!-- div para checagem de estado -->
+                <div id="state-check"></div>
+                <!---->
+                <input class="platform-field" type="text" placeholder="ex: PC">
+            </div>
+            <input class="submit" type="submit">
+            <button class="cancel">Cancelar</button>
+        </div>
+
+        <!-- área dos botões -->
+        <div class="buttons">
+            <button type="button" id="add-game">Add</button>
+            <button type="button" id="remove-game">Remove</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+
+/* definições do grid e do layout da página*/
+html{
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+div.grid{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    min-height: 75vh;
+}
+
+div.grid section.game-list {
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+div.grid section.thumbs img{
+    display: inline;
+}
+
+div.grid section.thumbs{
+    display: flex;  
+
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+/* definição sub-menu */
+div.sub-menu{
+    padding: 10px 30px 30px;
+    background-color: rgb(238, 68, 68);
+
+    position: absolute;
+    visibility: visible;
+    top: 15%;
+    left: 40%;
+    
+}
+
+div.sub-menu h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    color: white;
+}
+
+div.sub-menu input[type="text"]{
+    padding: 5px 20px;
+}
+
+div.sub-menu input.submit{
+    margin-top: 15px;
+    font-size: large;
+}
+
+div.sub-menu button.cancel{
+    margin-top: 15px;
+    font-size: large;
+}
+
+/* definições básicas dos botões */
+div.buttons{
+    padding: 0%;
+}
+
+.buttons button{
+    position: relative;
+    left: 80%;
+}
+
+/* definição das thumbs e listas*/
+section img{
+    height: 120px;
+    width: 90px;
+    padding: 10px;
+}
+
+/* cores e estilo */
+header{
+    margin: 0px;
+    padding: 5px;
+    background-color: brown;
+    border-bottom: 3px solid white;
+    color: white;
+}
+
+div section.game-list{
+    color: white;
+    background-color: rgb(56, 56, 56);
+    padding-left: 10px;
+}
+
+div section#thumbs{
+    background-color: rgb(120, 120, 120);
+    padding-left: 10px;
+}
+
+body div.buttons{
+    padding: 10px;
+    background-color: brown;
+    border-top: 3px solid white;
+}
+
+body div.buttons button{
+    padding: 5px;
+    font-size: 15px;
+}
