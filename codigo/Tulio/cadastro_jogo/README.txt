@@ -1,10 +1,9 @@
-  ---Instruçoes de uso---
-  Artefato: cadastro de entidade (sistema para cadastrar novos jogos na biblioteca do usuário)
-  
-  1. Clonar o diretório 'cadastro_jogo'
-  2. Abrir a página 'lib.html'
-  3. Para adicionar um jogo utilize o botão Add. Informações necessárias: nome do jogo, plataforma.
-  4. Para remover um jogo utilize o botão Remove. Informações necessárias: nome do jogo, plataforma. 
-  (Caso não encontre o jogo pelas informações apresentadas, um alerta será acionado na tela)
-  
-  Todas as informações como a lista de jogos cadastrados serão salvas no local storage do navegador.
+Sprint 3 -> Cadastro de entidade
+
+Cadastro de jogos na biblioteca do usuário
+
+info: Para cadastrar um jogo o usuário deve inserir um nome e plataforma válidas. Você pode checar quais jogos e plataformas são permitidos acessando o arquivo 'banco_jogos.json' na pasta data.
+
+obs: Não rode o site abrindo seu arquivo HTML diretamente, é necessário abrir um servidor usando o Live-server do VS Code ou utilizar o link do Replit.
+
+link: https://Biblioteca.tuliobrant.repl.co 
