@@ -17,6 +17,18 @@ header .top-menu{
     background-color: rgb(35, 35, 35);
 }
 
+header .top-menu .logo{
+    display: flex;
+    align-items: center;
+}
+
+header .top-menu .logo label{
+    
+    color: white;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 header .sub-menu nav ul{
     display: flex;
     justify-content: space-between;
