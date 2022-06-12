@@ -36,6 +36,6 @@ Obs:
 * As sprints individuais para teste estão localizadas nas pastas:
 
 - `codigo`
-  -`integrante`
+/ `integrante`
   
 * Site completo está em processo de unificação
