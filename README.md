@@ -33,5 +33,9 @@ Obs:
 
 ## Instruções de utilização
 
-* As sprints individuais para teste estão localizadas nas pastas 'codigo/<integrante>'
+* As sprints individuais para teste estão localizadas nas pastas:
+
+- `codigo`
+  -`integrante`
+  
 * Site completo está em processo de unificação
