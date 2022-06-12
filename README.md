@@ -19,7 +19,6 @@ Obs:
 
 ## Alunos integrantes da equipe
 
-* Alvaro Henrique Tavares
 * Guilherme Neves Pimenta Moreira
 * João Victor Croton Ribeiro Oliveira
 * Lucas Camarino Emerick de Almeida
@@ -34,4 +33,5 @@ Obs:
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+* As sprints individuais para teste estão localizadas nas pastas 'codigo/<integrante>'
+* Site completo está em processo de unificação
