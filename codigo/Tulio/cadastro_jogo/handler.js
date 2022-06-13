@@ -196,14 +196,25 @@ function checarPlataforma(str, type){
     let match = false;
     let operation = document.getElementById('state-check').getAttribute('class');
 
+    //index do jogo para checar a plataforma
+    let game_id = -1;
+    for(let i = 0; i < gameOpt.disponiveis.length; i++){
+        if($('.name-field').val() == gameOpt.disponiveis[i].nome) 
+            game_id = i;
+    }
+
+    // tratamento de erro: nome não digitado
+    if(game_id == -1){
+        alert("Digite o nome de um jogo válido");
+        return;
+    }
+
     if(operation == 'cadastro'){
-        for(let i = 0; i < gameOpt.disponiveis.length; i++){
-            for(let j = 0; j < gameOpt.disponiveis[i].plataformas.length; j++){
-                if(str == gameOpt.disponiveis[i].plataformas[j]){
-                    $('.platform-field').css('background-color', 'green');
-                    match = true;
-                }
-            }    
+        for(let i = 0; i < gameOpt.disponiveis[game_id].plataformas.length; i++){
+            if(str == gameOpt.disponiveis[game_id].plataformas[i]){
+                $('.platform-field').css('background-color', 'green');
+                match = true;
+            }
         }
         if(match === false) $('.platform-field').css('background-color', 'red');
     }
@@ -270,32 +281,17 @@ function enviarGame(){
         return;
     }
 
-    // tratamento de erro caso o jogo não exista no banco de dados de jogos permitidos
-    // caso também a plataforma não exista
-    for(let i = 0; i < gameOpt.disponiveis.length; i++){
-        if(nome == gameOpt.disponiveis[i].nome) break;
+    // chacagem se o jogo existe
+    let nomeCheck = checarGame(nome);
+    let plataformaCheck = checarPlataforma(plataforma);
 
-        if(i == gameOpt.disponiveis.length - 1){
-            alert('Jogo inválido');
-            return;
-        }
+    if(!nomeCheck){
+        alert("Nome inválido");
+        return;
     }
-
-    let match = 0;
-    for(let i = 0; i < gameOpt.disponiveis.length; i++){
-        for(let j = 0; j < gameOpt.disponiveis[i].plataformas.length; j++){
-
-            if(plataforma == gameOpt.disponiveis[i].plataformas[j]){
-                match = 1;
-                break;
-            }
-        }
-        if (match == 1) break;
-
-        if(i == gameOpt.disponiveis.length - 1){
-            alert('Plataforma inválida');
-            return;
-        }
+    else if(!plataformaCheck){
+        alert("Plataforma inválida");
+        return;
     }
 
     // criando o objeto do jogo
