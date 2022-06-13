@@ -8,9 +8,40 @@
         <script src="jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        <header><h1>Biblioteca</h1></header>
+        <header>
+            <div class="top-menu">
+                <div class="logo">
+                    <img src="imgs/Logo.png" alt="logo.png">
+                    <label>ame Exchange</label>
+                </div>
+                <div class="input-area">
+                    <ul class="cadastro-login">
+                        <li><a>Login</a></li>
+                        <li>|</li>
+                        <li><a>Cadastro</a></li>
+                    </ul>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar">
+                        <button>Ok</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-menu">
+                <nav>
+                    <ul>
+                        <li>opção 1</li>
+                        <li>|</li>
+                        <li>opção 2</li>
+                        <li>|</li>
+                        <li>opção 3</li>
+                        <li>|</li>
+                        <li>opção 4</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
         
-        <!-- estrtura básica do site -->
+        <!-- estrutura básica do site -->
         <div class="grid">
             <section class="game-list">
                 <h3>Lista</h3>
@@ -19,12 +50,12 @@
             </section>
     
             <section id="thumbs">
-                <h3>Jogos</h3>
+                <h3>Biblioteca</h3>
             </section>
         </div>
         
-        <!-- sub-menu -->
-        <div class="sub-menu">
+        <!-- menu-cadastro -->
+        <div class="menu-cadastro">
             <!-- div da classe do menu-->
             <div></div>
             <!---->
@@ -52,5 +83,10 @@
             <button type="button" id="add-game">Add</button>
             <button type="button" id="remove-game">Remove</button>
         </div>
+
+        <!-- rodapé -->
+        <footer>
+            <p>@Copyright 2022. Todos os direitos reservados</p>
+        </footer>
     </body>
 </html>

@@ -1,24 +1,43 @@
 
-/* definições do grid e do layout da página*/
+/* definições gerais*/
 html{
     margin: 0px;
 }
 
 body{
     margin: 0px;
-    width: 100%;
-    height: 100%;
 }
+/**/
 
+/* formatação do grid e seções */
 div.grid{
     display: grid;
     grid-template-columns: 1fr 3fr;
-    min-height: 75vh;
+    height: 82vh;
 }
 
+
 div.grid section.game-list {
-    max-height: 100%;
+    color: white;
+    background-color: rgb(35, 35, 35);
+
+    padding-left: 10px;
     overflow-y: scroll;
+
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+div.grid section.game-list ul{
+    padding: 0px;
+}
+
+div.grid section.game-list ul li{
+    padding-left: 10px;
+}
+
+div.grid section.game-list ul li:nth-child(even){
+    background-color: rgb(60, 60, 60);
 }
 
 div.grid section.thumbs img{
@@ -27,15 +46,79 @@ div.grid section.thumbs img{
 
 div.grid section.thumbs{
     display: flex;  
-
-    max-height: 100%;
     overflow-y: scroll;
 }
 
-/* definição sub-menu */
-div.sub-menu{
+div section#thumbs{
+    background-color: rgb(150, 150, 150);
+    padding-left: 10px;
+}
+/**/
+
+/* formatação do cabeçalho */
+header .top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(35, 35, 35);
+}
+
+header .top-menu .logo{
+    display: flex;
+    align-items: center;
+}
+
+header .top-menu .logo label{
+    
+    color: white;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header .sub-menu nav ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    margin: 0px;
+    padding: 3px;
+
+    background-color: brown;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    color: white;
+
+}
+
+header .logo img{
+    width: 50px;
+}
+
+header .input-area{
+    display: flex;
+    align-items: center;
+
+    padding: 0px 10px;
+}
+
+header .input-area ul{
+    display: flex;
+    list-style: none;
+
+    color: white;
+    padding: 0px 5px;
+}
+
+header .input-area ul li{
+    padding-right: 10px;
+}
+/**/
+
+/* definição menu-cadastro */
+div.menu-cadastro{
     padding: 10px 30px 30px;
-    background-color: rgb(238, 68, 68);
+    background-color: rgb(35, 35, 35);
+    border-radius: 30px;
 
     position: absolute;
     visibility: visible;
@@ -44,35 +127,48 @@ div.sub-menu{
     
 }
 
-div.sub-menu h3{
+div.menu-cadastro h3{
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
     color: white;
 }
 
-div.sub-menu input[type="text"]{
+div.menu-cadastro input[type="text"]{
     padding: 5px 20px;
 }
 
-div.sub-menu input.submit{
+div.menu-cadastro input.submit{
     margin-top: 15px;
     font-size: large;
 }
 
-div.sub-menu button.cancel{
+div.menu-cadastro button.cancel{
     margin-top: 15px;
     font-size: large;
 }
+/**/
 
 /* definições básicas dos botões */
 div.buttons{
+    position: absolute;
     padding: 0%;
+
+    left: 75vw;
+    bottom: 10%;
 }
 
 .buttons button{
     position: relative;
     left: 80%;
 }
+
+
+.buttons button{
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+}
+/**/
 
 /* definição das thumbs e listas*/
 section img{
@@ -81,33 +177,13 @@ section img{
     padding: 10px;
 }
 
-/* cores e estilo */
-header{
+/* rodapé */
+footer {
+    background-color: brown;
+    color: white;
+}
+
+footer p{
     margin: 0px;
-    padding: 5px;
-    background-color: brown;
-    border-bottom: 3px solid white;
-    color: white;
-}
-
-div section.game-list{
-    color: white;
-    background-color: rgb(56, 56, 56);
-    padding-left: 10px;
-}
-
-div section#thumbs{
-    background-color: rgb(120, 120, 120);
-    padding-left: 10px;
-}
-
-body div.buttons{
-    padding: 10px;
-    background-color: brown;
-    border-top: 3px solid white;
-}
-
-body div.buttons button{
-    padding: 5px;
-    font-size: 15px;
+    padding: 10px 5px 10px;
 }

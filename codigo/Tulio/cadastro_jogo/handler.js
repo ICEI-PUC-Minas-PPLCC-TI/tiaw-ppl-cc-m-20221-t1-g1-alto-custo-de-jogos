@@ -9,15 +9,15 @@ onload = () => {
     // eventos de controle
     // adição e remoção de jogos, definição do menu e campos de texto
     document.querySelector('#add-game').onclick = () => { 
-        $('.sub-menu').css('visibility', 'visible'); 
-        $('div.sub-menu > h3').text('Cadastre seu jogo');
+        $('.menu-cadastro').css('visibility', 'visible'); 
+        $('div.menu-cadastro > h3').text('Cadastre seu jogo');
         $('.name-field').css('background-color','white');
         $('.platform-field').css('background-color','white');
         $('.name-field').val('');
         $('.platform-field').val('');
         
         // adiciona a classe da operação
-        let controlador = $('.sub-menu > div');
+        let controlador = $('.menu-cadastro > div');
         
         if (controlador.hasClass('remover')){
             controlador.removeClass('remover');
@@ -41,14 +41,14 @@ onload = () => {
         }
     };
     document.querySelector('#remove-game').onclick = () => {
-        $('.sub-menu').css('visibility', 'visible'); 
-        $('div.sub-menu > h3').text('Remover jogo');
+        $('.menu-cadastro').css('visibility', 'visible'); 
+        $('div.menu-cadastro > h3').text('Remover jogo');
         $('.name-field').css('background-color','white');
         $('.platform-field').css('background-color','white');
         $('.name-field').val('');
         $('.platform-field').val('');
         
-        let controlador = $('.sub-menu > div');
+        let controlador = $('.menu-cadastro > div');
         
         // adiciona a classe da operação
         if (controlador.hasClass('cadastro')){
@@ -75,15 +75,15 @@ onload = () => {
     document.querySelector('.cancel').onclick = () => {
         $('.name-field').val('');
         $('.platform-field').val('');
-        $('.sub-menu').css('visibility', 'hidden');
+        $('.menu-cadastro').css('visibility', 'hidden');
         
-        let controlador = $('.sub-menu > div');
+        let controlador = $('.menu-cadastro > div');
         
         if(controlador.hasClass('cadastro')) controlador.removeClass('cadastro');
         else if(controlador.hasClass('remover')) controlador.removeClass('remover');
     };
     document.querySelector('.submit').onclick = resolverMenu;  
-    $('.sub-menu').css('visibility', 'hidden');
+    $('.menu-cadastro').css('visibility', 'hidden');
     
     // recupera os elementos do html
     gameList = document.querySelector('#list');
@@ -158,7 +158,7 @@ function initBiblioteca(){
 // função controladora do menu
 // determina se irá adicionar ou remover o jogo
 function resolverMenu(){
-    let controlador = $('.sub-menu > div');
+    let controlador = $('.menu-cadastro > div');
 
     if(controlador.hasClass('cadastro')) enviarGame();
     else removerGame();
@@ -256,7 +256,7 @@ function removerGame(){
     gameBd.games.splice(index, 1);
     localStorage.setItem('bd', JSON.stringify(gameBd));
 
-    $('.sub-menu').css('visibility', 'hidden');
+    $('.menu-cadastro').css('visibility', 'hidden');
     
 }
 function enviarGame(){
@@ -318,5 +318,5 @@ function enviarGame(){
     
     thumbSect.appendChild(newT);
 
-    $('.sub-menu').css('visibility', 'hidden');
+    $('.menu-cadastro').css('visibility', 'hidden');
 }
