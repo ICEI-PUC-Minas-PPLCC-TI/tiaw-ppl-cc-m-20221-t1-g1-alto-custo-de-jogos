@@ -5,6 +5,8 @@ var thumbSect;  //elemento section para armazenar as capas
 var gameBd;     //array de jogos na local storage
 var gameOpt;    //lista de jogos disponíveis para cadastro
 
+var tempGameId;  //indice temporário para acriação de um jogo
+
 onload = () => {
     // eventos de controle
     // adição e remoção de jogos, definição do menu e campos de texto
@@ -294,8 +296,14 @@ function enviarGame(){
         return;
     }
 
+    // recuperando a ID do jogo
+    for(let i = 0; i < gameOpt.disponiveis.length; i++){
+        if(nome == gameOpt.disponiveis[i].nome) 
+            tempGameId = i;
+    }
+
     // criando o objeto do jogo
-    let jogo = new Jogo(nome, plataforma, 'imgs/WireframeTest.jpg', 'bd' + gameBd.idSufix++);
+    let jogo = new Jogo(nome, plataforma, gameOpt.disponiveis[tempGameId].capa, 'bd' + gameBd.idSufix++);
     gameBd.games.push(jogo);
     localStorage.setItem('bd', JSON.stringify(gameBd))
 
@@ -309,10 +317,11 @@ function enviarGame(){
 
     //adiciona a capa do jogo a biblioteca
     let newT = document.createElement('img');
-    newT.setAttribute('src', 'imgs/WireframeTest.jpg')
+    newT.setAttribute('src', gameOpt.disponiveis[tempGameId].capa)
     newT.setAttribute('id', jogo.id);
     
     thumbSect.appendChild(newT);
 
     $('.menu-cadastro').css('visibility', 'hidden');
+    tempGameId = -1;    //valor padrão
 }

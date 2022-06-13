@@ -8,7 +8,8 @@
                 "Xbox One",
                 "Ps4",
                 "PC"
-            ]
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/c255cc8c8622d97196866fd3fb955dce.png"
         },
         {
             "nome" : "Fifa 22",
@@ -16,7 +17,8 @@
                 "Xbox One",
                 "Ps4",
                 "PC"
-            ]
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/f68bb6d93ded87d56f5dc9e50d2dbf5e.png"
         },
         {
             "nome" : "Sonic Mania",
@@ -24,7 +26,8 @@
                 "Ps4",
                 "Xbox One",
                 "PC"
-            ]
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d8e9010aff2b4bb497d6288af628e23f.png"
         }
     ]
 }
