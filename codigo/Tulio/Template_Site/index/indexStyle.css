@@ -7,6 +7,7 @@ body{
     margin: 0px;
     padding: 0px;
 }
+/**/
 
 /* formatação cabeçalho */
 header .top-menu{
@@ -77,13 +78,6 @@ section.intro h2{
     margin-bottom: 10px;
 }
 
-section.intro div.main-content{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-
-    padding: 45px 0px;
-}
-
 section.info{
     background-color: rgb(35, 35, 35);
     box-shadow: 0px 10px 10px rgb(97, 96, 96);
@@ -117,4 +111,31 @@ footer{
 footer p{
     margin: 0px;
     padding: 10px;
+}
+
+/* media queries */
+@media screen and (min-width : 501px) {
+    section.intro div.main-content{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    
+        padding: 45px 0px;
+    }
+    
+}
+
+@media screen and (max-width : 500px) {
+    .sub-menu {
+        display: none;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .intro div img {
+        position: relative;
+        display: block;
+        margin: 0px auto;
+    }
 }
