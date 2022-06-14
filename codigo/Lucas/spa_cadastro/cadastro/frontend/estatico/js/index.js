@@ -49,23 +49,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     rotaF();
 });
-
-function salvaEmail(){
-    let novoEmail = document.getElementById('novoEmail').value;
-    let objDados = leDados();
-    let objConta = leConta();
-    let index =localStorage.getItem('i');
-    objDados.usuarios[index].email = novoEmail;
-    objConta.email = novoEmail;
-    salvaDados(objDados);
-    salvaLogin(objConta);
-    loginTela(index)
-}
-
-function excluir(){
-    let objDados = leDados();
-    let index = localStorage.getItem('i');
-    objDados.usuarios.splice(index,1);
-    salvaDados(objDados);
-    sair();
-}

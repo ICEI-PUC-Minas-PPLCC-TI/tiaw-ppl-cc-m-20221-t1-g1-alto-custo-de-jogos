@@ -23,13 +23,18 @@ export default class extends viewAbstrata {
         const login = root.querySelector("#Xlogin");
         const senha = root.querySelector("#Xsenha");
         const email = root.querySelector("#Xemail");
-        const btnCadastro = root.querySelector("#Xenviar");
-        btnCadastro.addEventListener("click", () => this._cadastra(login, senha, email));
+        const btnCadastro = root.querySelector("#enviar");
+        btnCadastro.addEventListener("click", () => {
+            this._cadastra(login, senha, email);
+            login.value='';
+            senha.value='';
+            email.value='';
+        });
     }
 
     _cadastra(login, senha, email) {
         const novoUsuario = {
-            id: Math.random() * 10000,
+            id: Math.random() * 1000,
             login: login.value.trim(),
             senha: senha.value.trim(),
             email: email.value.trim()
