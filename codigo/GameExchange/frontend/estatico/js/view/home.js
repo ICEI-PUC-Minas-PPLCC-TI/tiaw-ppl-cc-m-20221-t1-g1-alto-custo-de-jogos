@@ -7,7 +7,7 @@ export default class{
         <header>
             <div class="top-menu">
                 <div class="logo">
-                    <img src="imgs/Logo.png" alt="logo.png">
+                    <img src="./estatico/imgs/Logo.png" alt="logo.png">
                     <label>Game Exchange</label>
                 </div>
                 <div class="input-area">
@@ -41,7 +41,7 @@ export default class{
         <section class="intro">
             <h2>Apresentando o Serviço</h2>
             <div class="main-content">
-                <img src="imgs/WireframeTest.jpg" alt="apresentação.png">
+                <img src="./estatico/imgs/WireframeTest.jpg" alt="apresentação.png">
                 <div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem necessitatibus ipsum dicta dignissimos praesentium ullam blanditiis fugit corrupti temporibus nisi minima atque nemo repellendus, culpa sint sit voluptatem fugiat nostrum.
                     Autem cupiditate at, mollitia iste illum sequi laborum recusandae enim, iure obcaecati, architecto cum quisquam non minima corrupti culpa voluptate nulla dicta distinctio veritatis voluptatem voluptas explicabo eveniet totam! Iste.</p>
@@ -65,9 +65,9 @@ export default class{
         <section class="exemplo">
             <h3>Exemplo de Jogos</h3>
             <div class="thumbs">
-                <img src="imgs/WireframeTest.jpg" alt="thumb.png">
-                <img src="imgs/WireframeTest.jpg" alt="thumb.png">
-                <img src="imgs/WireframeTest.jpg" alt="thumb.png">
+                <img src="./estatico/imgs/WireframeTest.jpg" alt="thumb.png">
+                <img src="./estatico/imgs/WireframeTest.jpg" alt="thumb.png">
+                <img src="./estatico/imgs/WireframeTest.jpg" alt="thumb.png">
             </div>
         </section>
     `;
