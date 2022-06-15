@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Usuarios</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script>
+               
+        if (!usuarioCorrente.login) {
+            window.location.href = LOGIN_URL;
+        }
+
+        function exibeUsuarios() {
+            
+            
+            let listaUsuarios = '';
+            for (i = 0; i < db_usuarios.usuarios.length; i++) {
+                let usuario = db_usuarios.usuarios[i];
+                listaUsuarios += `<tr><td scope="row">${usuario.nome}</td><td>${usuario.login}</td><td>${usuario.email}</td></tr>`;
+            }
+
+            
+            document.getElementById("table-usuarios").innerHTML = listaUsuarios
+
+        }
+
+        function initPage() {
+
+           
+            document.getElementById('btn_Acessar').addEventListener('click', logoutUser);
+
+            
+            document.getElementById('Nickname').innerHTML = usuarioCorrente.nome;
+
+            
+            exibeUsuarios ();
+        }
+
+        
+        window.addEventListener('load', initPage);
+    </script>    
+    
+
+</head>
+<body>
+    
+    
+<form class="Formulario" action="#">
+    <div class="card">
+        <div card="card-top">
+            <img class="imglogo" src="imf/games.png" alt="">
+            <h2>LOGIN</h2>
+            <P>Faça seu login</P>
+        </div>
+
+        <div class="card-group">
+            <label>Nickname</label>
+            <input type="text" name="Nickname" placeholder="Digite seu Nickname">
+        </div>
+
+        <div class="card-group">
+            <label>Senha</label>
+            <input type="password" name="Senha" placeholder="Digite sua senha">
+        </div>
+
+        <div class="card-group">
+            <label><input type="checkbox">Lembre-me</label>
+        </div>
+        <div class="card-group">
+            <button type="submit">ACESSAR</button>
+        </div>
+    </div>
+
+</form>
+
+</body>
+</html>
