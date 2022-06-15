@@ -9,7 +9,7 @@ body{
 }
 /**/
 
-/* formatação cabeçalho */
+/* #region formatação cabeçalho */
 header .top-menu{
     display: flex;
     justify-content: space-between;
@@ -66,22 +66,49 @@ header .input-area ul{
 header .input-area ul li{
     padding-right: 10px;
 }
+/* #endregion */
 
-/* formatação seções do corpo */
+/* #region formatação seções do corpo */
 section{
     padding: 15px;
+}
+
+section.intro{
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+
+    color: white;
 }
 
 section.intro h2{
     text-align: center;
 
     margin-bottom: 10px;
+    
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
 }
 
 section.info{
+    position: relative;
+    z-index: -1;
+
     background-color: rgb(35, 35, 35);
-    box-shadow: 0px 10px 10px rgb(97, 96, 96);
     color: white;
+    
+}
+
+section.exemplo{
+    background-color: rgb(43, 48, 75);
+}
+
+section.exemplo h3{
+    color: white;
+}
+
+section.exemplo .thumbs img{
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
 
 section.exemplo div.thumbs{
@@ -89,17 +116,17 @@ section.exemplo div.thumbs{
     justify-content: center;
     align-items: flex-end;
 }
+/* #endregion */
 
-section.exemplo div.thumbs img{
-    width: 100px;
-    height: 140px;
-
+/* botão */
+.intro button{
+    background-color: brown;
+    color: white;
+    font-size: 20px;
     padding: 10px;
-}
+    border-radius: 20px;
 
-section.exemplo div.thumbs img:nth-child(odd){
-    width: 70px;
-    height: 100px;
+    border: none;
 }
 
 /* formatação rodapé */
@@ -113,8 +140,14 @@ footer p{
     padding: 10px;
 }
 
-/* media queries */
-@media screen and (min-width : 501px) {
+/* formatação banner */
+.intro{
+    background-image: url("imgs/banner1.jpg");
+    background-size: cover;
+}
+
+/* #region media queries */
+@media screen and (min-width : 551px) {
     section.intro div.main-content{
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -122,9 +155,25 @@ footer p{
         padding: 45px 0px;
     }
     
+    section.exemplo div.thumbs img{
+        width: 180px;
+        height: 250px;
+    
+        margin: 20px;
+    }
+    
+    section.exemplo div.thumbs img:nth-child(odd){
+        width: 120px;
+        height: 180px;
+    }
+
+    .intro div img{
+        width: 250px;
+    }
+
 }
 
-@media screen and (max-width : 500px) {
+@media screen and (max-width : 550px) {
     .sub-menu {
         display: none;
     }
@@ -133,9 +182,24 @@ footer p{
         display: none;
     }
 
+    section.exemplo div.thumbs img{
+        width: 100px;
+        height: 140px;
+    
+        margin: 10px;
+    }
+    
+    section.exemplo div.thumbs img:nth-child(odd){
+        width: 70px;
+        height: 100px;
+    }
+
     .intro div img {
         position: relative;
         display: block;
         margin: 0px auto;
+
+        width: 150px;
     }
 }
+/* #endregion */
