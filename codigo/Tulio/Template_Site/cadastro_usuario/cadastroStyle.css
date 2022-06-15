@@ -44,6 +44,12 @@
         border: none;
         border-radius: 10px;
     }
+
+    div[class="datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-bottom"]{
+        background: white;
+        position: absolute;
+        margin: 20vh 0px 0px 0px;
+    }
 /* #endregion */
 
 /* #region media queries */
