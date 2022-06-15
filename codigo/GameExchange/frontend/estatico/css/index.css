@@ -1,0 +1,140 @@
+/* config gerais */
+html{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* formatação cabeçalho */
+header .top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(35, 35, 35);
+}
+
+header .top-menu .logo{
+    display: flex;
+    align-items: center;
+}
+
+header .top-menu .logo label{
+    
+    color: white;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header .sub-menu nav ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    margin: 0px;
+    padding: 3px;
+
+    background-color: brown;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    color: white;
+
+}
+
+header .logo img{
+    width: 50px;
+}
+
+header .input-area{
+    display: flex;
+    align-items: center;
+
+    padding: 0px 10px;
+}
+
+header .input-area ul{
+    display: flex;
+    list-style: none;
+
+    color: white;
+    padding: 0px 5px;
+}
+
+header .input-area ul li{
+    padding-right: 10px;
+}
+
+/* formatação seções do corpo */
+section{
+    padding: 15px;
+}
+
+section.intro h2{
+    text-align: center;
+
+    margin-bottom: 10px;
+}
+
+section.info{
+    background-color: rgb(35, 35, 35);
+    box-shadow: 0px 10px 10px rgb(97, 96, 96);
+    color: white;
+}
+
+section.exemplo div.thumbs{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+section.exemplo div.thumbs img{
+    width: 100px;
+    height: 140px;
+
+    padding: 10px;
+}
+
+section.exemplo div.thumbs img:nth-child(odd){
+    width: 70px;
+    height: 100px;
+}
+
+/* formatação rodapé */
+footer{
+    background-color: brown;
+    color: white;
+}
+
+footer p{
+    margin: 0px;
+    padding: 10px;
+}
+
+/* media queries */
+@media screen and (min-width : 501px) {
+    section.intro div.main-content{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    
+        padding: 45px 0px;
+    }
+    
+}
+
+@media screen and (max-width : 500px) {
+    .sub-menu {
+        display: none;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .intro div img {
+        position: relative;
+        display: block;
+        margin: 0px auto;
+    }
+}
