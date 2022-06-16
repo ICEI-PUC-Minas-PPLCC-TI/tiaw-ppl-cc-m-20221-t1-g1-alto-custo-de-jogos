@@ -1,4 +1,5 @@
 import home from "./view/home.js";
+import login from "./view/login.js"
 
 const root = document.getElementById("root");
 
@@ -10,6 +11,7 @@ const navegarPara = url => {
 const rotaF = async () => {
     const rotas = [
         {caminho: "/", view: home},
+        {caminho: "/login", view: login},
     ];
     //testando cada rota para combinações em potencial
 

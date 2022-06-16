@@ -142,7 +142,7 @@ footer p{
 
 /* formatação banner */
 .intro{
-    background-image: url("./estatico/imgs/banner1.jpg");
+    background-image: url("../imgs/banner1.jpg");
     background-size: cover;
 }
 

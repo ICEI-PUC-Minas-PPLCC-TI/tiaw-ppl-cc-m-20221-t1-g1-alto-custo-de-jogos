@@ -12,7 +12,7 @@ export default class{
                 </div>
                 <div class="input-area">
                     <ul class="cadastro-login">
-                        <li><a>Login</a></li>
+                        <li><a href="/login" data-link>Login</a></li>
                         <li>|</li>
                         <li><a>Cadastro</a></li>
                     </ul>
