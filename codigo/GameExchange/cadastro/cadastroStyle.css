@@ -55,7 +55,7 @@
         z-index: -1;
         overflow: auto;
 
-        background-image: url(imgs/banner_Site.jpg);
+        background-image: url("../imgs/banner_Site.jpg");
         background-size: cover;
         opacity: 0.8;
     }
@@ -91,7 +91,7 @@
 @media screen and (max-width : 550px){
     
     html{
-        background-image: url(imgs/banner_Site.jpg);
+        background-image: url("../imgs/banner_Site.jpg");
     }
     
     .main-area{
