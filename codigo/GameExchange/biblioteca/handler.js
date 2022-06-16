@@ -7,6 +7,14 @@ var gameOpt;    //lista de jogos disponíveis para cadastro
 
 var tempGameId;  //indice temporário para acriação de um jogo
 
+// controle de status de login
+let loginStatus = JSON.parse(localStorage.getItem('status'));
+let statusCode = loginStatus.login;
+if(statusCode == 0){
+    alert("Usuário não identificado");
+    window.location.href = "../index.html";
+}
+
 onload = () => {
     // eventos de controle
     // adição e remoção de jogos, definição do menu e campos de texto
