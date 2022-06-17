@@ -1,5 +1,6 @@
 import home from "./view/home.js";
-import login from "./view/login.js"
+import login from "./view/login.js";
+import cadastro from "./view/cadastro.js";
 
 const root = document.getElementById("root");
 
@@ -12,9 +13,10 @@ const rotaF = async () => {
     const rotas = [
         {caminho: "/", view: home},
         {caminho: "/login", view: login},
+        {caminho: "/cadastro", view: cadastro}
     ];
+    
     //testando cada rota para combinações em potencial
-
     const combinacoesEmPotencial = rotas.map(rota => {
         return {
             rota: rota,

@@ -14,7 +14,7 @@ export default class{
                     <ul class="cadastro-login">
                         <li><a href="/login" data-link>Login</a></li>
                         <li>|</li>
-                        <li><a>Cadastro</a></li>
+                        <li><a href="/cadastro" data-link>Cadastro</a></li>
                     </ul>
                     <div class="search-bar">
                         <input type="text" placeholder="Buscar">
