@@ -37,4 +37,8 @@ export default class localAPI {
         }
         localStorage.setItem('db', JSON.stringify(novosDados));
     }
+
+    static logarUsuario(usuario) {
+        localStorage.setItem('logado', JSON.stringify(usuario));
+    }
 }
