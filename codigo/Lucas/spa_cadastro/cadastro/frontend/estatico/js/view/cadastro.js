@@ -20,7 +20,7 @@ export default class extends viewAbstrata {
             </div>            
         </div>        
         `; 
-        const login = root.querySelector("#Xlogin");
+        const login = document.querySelector("#Xlogin");
         const senha = root.querySelector("#Xsenha");
         const email = root.querySelector("#Xemail");
         const btnCadastro = root.querySelector("#enviar");
