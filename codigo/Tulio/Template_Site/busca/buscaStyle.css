@@ -1,0 +1,69 @@
+/* config gerais */
+html{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+/**/
+
+/* #region formatação cabeçalho */
+header .top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(35, 35, 35);
+}
+
+header .top-menu .logo{
+    display: flex;
+    align-items: center;
+}
+
+header .top-menu .logo label{
+    
+    color: white;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header .sub-menu nav ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    margin: 0px;
+    padding: 3px;
+
+    background-color: brown;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    color: white;
+
+}
+
+header .logo img{
+    width: 50px;
+}
+
+header .input-area{
+    display: flex;
+    align-items: center;
+
+    padding: 0px 10px;
+}
+
+header .input-area ul{
+    display: flex;
+    list-style: none;
+
+    color: white;
+    padding: 0px 5px;
+}
+
+header .input-area ul li{
+    padding-right: 10px;
+}
+/* #endregion */

@@ -51,7 +51,7 @@ export default class{
                 </div>
 
                 <div class="term-check">
-                    <input type="checkbox" id="terms">
+                    <input type="checkbox" id="terms" name="aceitar" value="aceitouTermos">
                     <label for="terms">Aceito os termos e condições</label>
                 </div>
                 <button type="submit" id="submit">Enviar</button>
@@ -69,18 +69,131 @@ export default class{
         const btnEnviar = document.querySelector("#submit");
         btnEnviar.addEventListener("click", e => {
         e.preventDefault();
-        //this._certificaSenhaETermos();
-        //this._padrozinaData();
-        const novoUsuario = {
-            login: userName.value.trim(),
-            senha: senha.value.trim(),
-            email: email.value.trim(),
-            nascimento: date.value.trim(),
-            nome: nome.value.trim(),
-            sobrenome: sobrenome.value.trim(),
+        const formulario = {
+            login: userName,
+            senha: senha,
+            cSenha: confirmaSenha,
+            email: email,
+            nascimento: date,
+            nome: nome,
+            sobrenome: sobrenome,
+            termos: termos,
         };
-        this._cadastra(novoUsuario);
+        if(this._certificaTudo(formulario)) {
+            const novoUsuario = {
+                login: userName.value.trim(),
+                senha: senha.value.trim(),
+                email: email.value.trim(),
+                nascimento: date.value.trim(),
+                nome: nome.value.trim(),
+                sobrenome: sobrenome.value.trim(),
+            };
+            this._cadastra(novoUsuario);
+        }  
         });
+    }
+
+    _certificaTudo(obj){
+        let verifica = 0;
+        if(!this._certificaLogin(obj.login)){
+            verifica++;
+        }
+        if(!this._cetificaSenha(obj.senha, obj.cSenha)){
+            verifica++;
+        }
+        if(!this._certificaEmail(obj.email)){
+            verifica++;
+        }
+        if(!this._certificaNascimento(obj.nascimento)){
+            verifica++;
+        }
+        if(!this._certificaNome(obj.nome)){
+            verifica++;
+        }
+        if(!this._certificaSobrenome(obj.sobrenome)){
+            verifica++;
+        }
+        if(!this._certificaTermos(obj.termos)){
+            verifica++;
+        }
+        if(verifica == 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    _certificaNascimento(nascimento) {
+        const string = String(nascimento.value.trim());
+        if(string.length == 8){
+            nascimento.style.border = "";
+            return true;
+        }else {
+            nascimento.style.border = "solid #E8833A";
+            alert('Voce deve digitar sua data de nascimento com apenas os 8 numeros (DDMMAAAA) para cadastrar!');
+            return false
+        }
+    }
+
+    _certificaEmail(email) {
+        if(email.value.trim()){
+            email.style.border = "";
+            return true;
+        }else {
+            email.style.border = "solid #E8833A";
+            return false
+        }
+    }
+
+    _certificaSobrenome(sobrenome) {
+        if(sobrenome.value.trim()){
+            sobrenome.style.border = "";
+            return true;
+        }else {
+            sobrenome.style.border = "solid #E8833A";
+            return false
+        }
+    }
+
+    _certificaNome(nome) {
+        if(nome.value.trim()){
+            nome.style.border = "";
+            return true;
+        }else {
+            nome.style.border = "solid #E8833A";
+            return false
+        }
+    }
+
+    _certificaLogin(userName) {
+        if(userName.value.trim()){
+            userName.style.border = "";
+            return true;
+        }else {
+            userName.style.border = "solid #E8833A";
+            return false
+        }
+    }
+
+    _certificaTermos(termos) {
+        if(termos.checked) {
+            return true;
+        }else {
+            alert('voce deve aceitar os termos para se cadastrar');
+            return false;
+        }
+    }
+
+    _cetificaSenha(senha, cSenha){
+        if(senha.value.trim() == cSenha.value.trim() && senha.value.trim()!=''){
+            senha.style.border = "";
+            cSenha.style.border = "";
+            return true;
+        }else {
+            senha.style.border = "solid #E8833A";
+            cSenha.style.border = "solid #E8833A";
+            return false;
+        }
     }
 
     _getRandomInt(min, max) {
