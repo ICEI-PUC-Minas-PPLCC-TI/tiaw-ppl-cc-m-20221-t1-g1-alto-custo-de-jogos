@@ -50,7 +50,8 @@ a{
         margin-left: 60vw;
         min-height: 100vh;
 
-        background-color: brown;
+        background-color: rgb(20, 20, 20);
+        border-left: 3px dashed brown;
         overflow: auto;
     
         box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.5);
@@ -87,7 +88,7 @@ a{
 
         border-radius: 20px;
 
-        background-color: brown;
+        background-color: rgb(20, 20, 20);
         overflow: auto;
 
         box-shadow: 5px 15px 10px rgba(0, 0, 0, 0.6);

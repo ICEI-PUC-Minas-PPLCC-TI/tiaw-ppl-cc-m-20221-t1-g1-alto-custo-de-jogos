@@ -13,7 +13,8 @@
     }
 
     .main-area{
-        background-color: brown;
+        background-color: rgb(20, 20, 20);
+        border: 3px dashed brown;
         border-radius: 20px;
         z-index: 1;        
     }
@@ -57,7 +58,7 @@
 
         background-image: url(imgs/banner_Site.jpg);
         background-size: cover;
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
     .main-area{
@@ -65,7 +66,7 @@
         margin: 10vh auto 0px;
 
         padding: 0px 100px 0px;
-        height: 90vh;
+        height: 89vh;
 
         box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.4);
     }

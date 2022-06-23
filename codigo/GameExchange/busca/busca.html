@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Jogos</title>
+
         <link rel="stylesheet" href="buscaStyle.css">
-        <title>Resultados</title>
+        <script src="../jquery-3.6.0.min.js"></script>
+        <script src="listLoader.js"></script>
     </head>
     <body>
         <!-- cabeçalho -->
         <header>
             <div class="top-menu">
                 <div class="logo">
-                    <img src="imgs/Logo.png" alt="logo.png">
+                    <img src="../imgs/Logo.png" alt="logo.png">
                     <label>ame Exchange</label>
                 </div>
                 <div class="input-area">
                     <ul class="cadastro-login">
-                        <li><a>Login</a></li>
+                        <li><a href="../login/login.html">Login</a></li>
                         <li>|</li>
-                        <li><a>Cadastro</a></li>
+                        <li><a href="../cadastro/cadastro.html">Cadastro</a></li>
                     </ul>
                     <div class="search-bar">
                         <input type="text" placeholder="Buscar">
@@ -29,29 +32,28 @@
             <div class="sub-menu">
                 <nav>
                     <ul>
-                        <li>Home</li>
+                        <li><a href="../index.html">Home</a></li>
                         <li>|</li>
-                        <li>Biblioteca</li>
+                        <li><a href="../biblioteca/lib.html">Biblioteca</a></li>
                         <li>|</li>
-                        <li>Trocar</li>
+                        <li>Página de troca</li>
                         <li>|</li>
-                        <li>Sobre</li>
+                        <li><a href="busca.html">Lista de jogos</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-        <!-- corpo -->
         <main>
-            <div class="body-head">
-                <h2>Resultados</h2>
-                <div>
-                    <p class="diplay-value">0</p>
-                    <p>Resultados</p>
-                </div>
+            <h2>Jogos Disponíveis</h2>
+            <div class="content">   
+                <section class="game-thumbs">
+    
+                </section>
+                <section class="game-list">
+                    <ul class="list"></ul>
+                </section>
             </div>
-            <section class="body-content">
-            </section>
         </main>
     </body>
 </html>
