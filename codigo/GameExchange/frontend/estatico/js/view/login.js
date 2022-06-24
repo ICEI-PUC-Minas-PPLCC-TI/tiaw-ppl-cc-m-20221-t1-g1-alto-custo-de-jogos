@@ -8,13 +8,14 @@ export default class{
         <div class="background-cover"></div>
         <aside class="login-menu">
             <div>
+                <a id="homePage" href="/home" data-link><img src="./../imgs/Logo.png" alt="logo.png"></a>
                 <img src="./imgs/usuarioImg.png" alt="perfil.png">
                 <input type="text" placeholder="Usuário" id="login">
                 <input type="text" placeholder="Senha" id="senha">
                 
                 <div class="acessos">
                     <button id="entrar">Entrar</button>
-                    <a href="../cadastro" data-link>Cadastro</a>
+                    <a href="/cadastro" data-link>Cadastro</a>
                 </div>
             </div>           
         </aside>
@@ -32,6 +33,8 @@ export default class{
         for(let i=0;i<objDados.usuarios.length;i++){
             if(login == objDados.usuarios[i].login && senha == objDados.usuarios[i].senha){
                 localAPI.logarUsuario(objDados.usuarios[i]);
+                const homePage = document.querySelector('#homePage');
+                homePage.c
                 break;
             }
         }

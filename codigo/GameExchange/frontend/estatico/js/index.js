@@ -11,7 +11,7 @@ const navegarPara = url => {
 
 const rotaF = async () => {
     const rotas = [
-        {caminho: "/", view: home},
+        {caminho: "/home", view: home},
         {caminho: "/login", view: login},
         {caminho: "/cadastro", view: cadastro}
     ];

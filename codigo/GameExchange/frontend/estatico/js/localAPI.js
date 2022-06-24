@@ -41,4 +41,16 @@ export default class localAPI {
     static logarUsuario(usuario) {
         localStorage.setItem('logado', JSON.stringify(usuario));
     }
+
+    static consultarUsuario() {
+        const usuarioStr = localStorage.getItem('logado');
+        if(usuarioStr){
+            const usuario = JSON.parse(usuarioStr);
+            return usuario;
+        }
+    }
+
+    static deslogarUsuario() {
+        localStorage.removeItem('logado');
+    }
 }
