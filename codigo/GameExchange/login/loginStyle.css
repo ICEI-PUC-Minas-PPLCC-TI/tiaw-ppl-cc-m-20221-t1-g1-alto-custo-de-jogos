@@ -18,6 +18,10 @@ a{
     width: 160px;
 }
 
+.acessos button:hover{
+    cursor: pointer;
+}
+
 .exit button{
     background: none;
     border: none;

@@ -84,6 +84,8 @@ body{
 
 .list{
     color: white;
+    list-style: decimal;
+    padding-left: 50px;
 }
 
 .list li:nth-child(even){
@@ -97,11 +99,12 @@ body{
 
 .game-thumbs img{
     margin: 15px;
-    height: 150px;
+    height: 135px;
 }
 /* #endregion */
 
-@media screen and (min-width : 650px){
+/* Deskyop */
+@media screen and (min-width : 651px){
     
     main{
         margin: 20px 75px 0px;
@@ -133,5 +136,27 @@ body{
         border-radius: 20px;
 
         overflow-y: scroll;    
+    }
+}
+/* Mobile */
+@media screen and (max-width : 650px) {
+
+    main > h2{
+        text-align: center;
+        color: white;
+    }
+
+    .game-thumbs{
+        background-color: rgba(20, 20, 20, 0.8);
+        height: 70vh;
+        overflow-y: scroll;
+
+        margin-bottom: 50px;
+    }
+
+    .game-list{
+        height: 30vh;
+        background-color: rgba(20, 20, 20, 0.8);
+        overflow-y: scroll;
     }
 }
