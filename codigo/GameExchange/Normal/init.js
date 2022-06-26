@@ -1,11 +1,10 @@
+import localAPI from "./localAPI.js";
+
 onload = () => {
-    
-    let loginStatus = localStorage.getItem('status');
-    
-    if(loginStatus == null){
-        // cria o stats de login
-        // 0 - não está logado
-        let _obj = { login : 0 };
-        localStorage.setItem('status', JSON.stringify(_obj));
+    const usuario = localAPI.consultarUsuario()
+    if(usuario) {
+        const bemVindo = document.querySelector("#bemVindo");
+        bemVindo.innerHTML = `<p>Bem vindo ${usuario.login}! </p>`;
+    }else {
     }
 }

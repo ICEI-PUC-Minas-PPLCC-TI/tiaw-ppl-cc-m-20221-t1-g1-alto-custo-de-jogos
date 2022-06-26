@@ -1,3 +1,4 @@
+import localAPI from "../localAPI.js";
 
 var gameList;   //elemento ul para listar os jogos
 var thumbSect;  //elemento section para armazenar as capas
@@ -8,7 +9,7 @@ var gameOpt;    //lista de jogos disponíveis para cadastro
 var tempGameId;  //indice temporário para acriação de um jogo
 
 // controle de status de login
-let loginStatus = JSON.parse(localStorage.getItem('status'));
+let loginStatus = localAPI.consultarUsuario();
 let statusCode = loginStatus.login;
 if(statusCode == 0){
     alert("Usuário não identificado");

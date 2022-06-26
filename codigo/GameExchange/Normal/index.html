@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="indexStyle.css">
         <title>Game Exchange</title>
 
-        <script src="init.js"></script>
+        <script src="init.js" type="module"></script>
     </head>
     <body>
         <!-- cabeçalho -->
@@ -17,11 +17,13 @@
                     <label>Game Exchange</label>
                 </div>
                 <div class="input-area">
-                    <ul class="cadastro-login">
-                        <li><a href="login/login.html">Login</a></li>
-                        <li>|</li>
-                        <li><a href="cadastro/cadastro.html">Cadastro</a></li>
-                    </ul>
+                    <div id="bemVindo">
+                        <ul class="cadastro-login">
+                            <li><a href="login/login.html">Login</a></li>
+                            <li>|</li>
+                            <li><a href="cadastro/cadastro.html">Cadastro</a></li>
+                        </ul>
+                    </div>
                     <div class="search-bar">
                         <input type="text" placeholder="Buscar">
                         <button>Ok</button>
@@ -33,7 +35,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li>|</li>
-                        <li><a href="biblioteca/lib.html">Biblioteca</a></li>
+                        <li id="biblioteca"><a href="biblioteca/lib.html">Biblioteca</a></li>
                         <li>|</li>
                         <li>Trocar</li>
                         <li>|</li>

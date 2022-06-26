@@ -129,7 +129,7 @@ const cadastra = usuario => {
     }
 }
 
-onload = () =>{
+onload = () => {
     const nome = document.querySelector("#fname");
     const sobrenome = document.querySelector("#lname");
     const userName = document.querySelector("#uname");
