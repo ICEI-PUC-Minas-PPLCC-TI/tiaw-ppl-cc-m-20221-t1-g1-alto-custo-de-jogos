@@ -4,9 +4,8 @@ export default class{
     constructor(root) {
         document.title = "Game Exchange";
         const usuario = localAPI.consultarUsuario();
-        this.root = root;
         if(usuario){
-            this.root.innerHTML = `
+            root.innerHTML = `
                 <!-- cabeçalho -->
                 <header>
                     <div class="top-menu">
@@ -77,7 +76,7 @@ export default class{
             const btnLogout = document.querySelector('#logout');
             btnLogout.addEventListener('click', () => localAPI.deslogarUsuario());
         }else{
-            this.root.innerHTML = `
+            root.innerHTML = `
                 <!-- cabeçalho -->
                 <header>
                     <div class="top-menu">

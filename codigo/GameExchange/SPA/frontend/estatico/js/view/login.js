@@ -3,13 +3,12 @@ import localAPI from "../localAPI.js";
 export default class{
     constructor(root) {
         document.title = "Login";
-        this.root = root;
-        this.root.innerHTML = `
+        this.root = root.innerHTML = `
         <div class="background-cover"></div>
         <aside class="login-menu">
             <div>
-                <a id="homePage" href="/home" data-link><img src="./../imgs/Logo.png" alt="logo.png"></a>
-                <img src="./imgs/usuarioImg.png" alt="perfil.png">
+                <a href="/home" data-link>Home</a>
+                <img src="estatico/img/usuarioImg.png" alt="perfil.png">
                 <input type="text" placeholder="Usuário" id="login">
                 <input type="text" placeholder="Senha" id="senha">
                 

@@ -11,9 +11,10 @@ const navegarPara = url => {
 
 const rotaF = async () => {
     const rotas = [
-        {caminho: "/home", view: home},
+        {caminho: "/", view: home},
         {caminho: "/login", view: login},
-        {caminho: "/cadastro", view: cadastro}
+        {caminho: "/cadastro", view: cadastro},
+        {caminho: "/home", view: home}
     ];
     
     //testando cada rota para combinações em potencial
@@ -36,6 +37,7 @@ const rotaF = async () => {
     const view = new combinou.rota.view(root);
 };
 
+//toda vez que o historico é algerado a funcao rotaF é iniciada
 window.addEventListener("popstate", rotaF);
 
 document.addEventListener("DOMContentLoaded", () => {
