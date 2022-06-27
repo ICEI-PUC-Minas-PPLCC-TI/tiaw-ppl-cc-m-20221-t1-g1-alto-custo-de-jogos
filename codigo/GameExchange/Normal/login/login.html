@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="loginStyle.css">
         <title>Login</title>
+
+        <script src="../jquery-3.6.0.min.js"></script>
+        <script src="logar.js"></script>
     </head>
     <body>
         <div class="background-cover"></div>
@@ -16,18 +19,17 @@
         <aside class="login-menu">
             <div class="content">
                 <img src="../imgs/usuarioImg.png" alt="perfil.png">
-                <input type="text" placeholder="Usuário" id="login">
-                <input type="text" placeholder="Senha" id="senha">
+                <input id="username-field" type="text" placeholder="Usuário">
+                <input id="password-field" type="password" placeholder="Senha">
                 
                 <div class="acessos">
-                    <button id="entrar">Entrar</button>
-                    <a href="./../cadastro/cadastro.html">Cadastro</a>
+                    <button class="submit-button">Entrar</button>
+                    <a href="../cadastro/cadastro.html">Cadastro</a>
                 </div>
             </div>
         </aside>
         <footer>
             <p>@Copyright 2022. Todos os direitos reservados</p>
         </footer>
-        <script src="login.js" type="module"></script>
     </body>
 </html>

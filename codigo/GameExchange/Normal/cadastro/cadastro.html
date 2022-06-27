@@ -7,7 +7,7 @@
         <title>Cadastro de usuário</title>
 
         <!-- jquery -->
-        <script src="jquery-3.6.0.min.js"></script>
+        <script src="../jquery-3.6.0.min.js"></script>
 
         <!-- bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
@@ -15,6 +15,8 @@
         <!-- data picker -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+        <script src="cadastrar.js"></script>
 
         <!-- configurando o data picker -->
         <script>
@@ -35,7 +37,7 @@
         <div class="background"></div>
         <aside class="main-area">
             <h2>Novo usuário</h2>
-            <form action="" method="">    
+            <section class="cadastro">    
                 <div class="name-input">
                     <div>
                         <label for="fname">Digite seu nome:</label><br>
@@ -53,9 +55,13 @@
                 </div>
 
                 <!-- seletor de data -->
-                <div class="form-group">
+                <!-- <div class="date-picker">
                     <label for="date">Data de Nascimento</label><br>
                     <input class="form-control" id="date" name="date" placeholder="DD/MM/AAAA" type="text"/>
+                </div> -->
+                <div class="date-input">
+                    <label for="date">Data de Nascimento</label><br>
+                    <input type="text" id="date" placeholder="DD/MM/AAAA">
                 </div>
                   <!-- botão de envio -->
                   <!--<div class="form-group">
@@ -78,12 +84,11 @@
                 </div>
 
                 <div class="term-check">
-                    <input type="checkbox" id="terms">
+                    <input type="checkbox">
                     <label for="terms">Aceito os termos e condições</label>
                 </div>
-                <button type="submit" id="submit">Enviar</button>
-            </form>
-            <script src="cadastro.js" type="module"></script>
+                <button class="submit-button">Enviar</button>
+            </section>
         </aside>
     </body>
 </html>

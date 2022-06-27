@@ -7,10 +7,18 @@ body{
     margin: 0px;
     padding: 0px;
 }
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+header a:hover{
+    color: black;
+}
 /**/
 
 /* #region formatação cabeçalho */
-header .top-menu{
+.top-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,19 +26,19 @@ header .top-menu{
     background-color: rgb(35, 35, 35);
 }
 
-header .top-menu .logo{
+.top-menu .logo{
     display: flex;
     align-items: center;
 }
 
-header .top-menu .logo label{
+.top-menu .logo label{
     
     color: white;
     font-size: x-large;
     font-family: 'Courier New', Courier, monospace;
 }
 
-header .sub-menu nav ul{
+.sub-menu nav ul{
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -44,18 +52,18 @@ header .sub-menu nav ul{
 
 }
 
-header .logo img{
+.logo img{
     width: 50px;
 }
 
-header .input-area{
+.input-area{
     display: flex;
     align-items: center;
 
     padding: 0px 10px;
 }
 
-header .input-area ul{
+.input-area ul{
     display: flex;
     list-style: none;
 
@@ -63,7 +71,7 @@ header .input-area ul{
     padding: 0px 5px;
 }
 
-header .input-area ul li{
+.input-area ul li{
     padding-right: 10px;
 }
 /* #endregion */
@@ -101,6 +109,8 @@ section.info{
 
 section.exemplo{
     background-color: rgb(43, 48, 75);
+    background-image: radial-gradient(rgb(43, 48, 75), rgb(14, 18, 41));
+    border-top: 1px solid white;
 }
 
 section.exemplo h3{
