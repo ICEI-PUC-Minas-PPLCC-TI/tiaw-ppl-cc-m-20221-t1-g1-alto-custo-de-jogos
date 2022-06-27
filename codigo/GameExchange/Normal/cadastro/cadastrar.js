@@ -5,13 +5,13 @@ onload = () => {
 }
 
 function checarInfo(){
-    let fname = $('#fname').val();
-    let lname = $('#lname').val();
-    let usuario = $('#uname').val();
-    let senha = $('#password').val();
-    let cSenha = $('#confirm').val();
-    let email = $('#email').val();
-    let data = $('#date').val();
+    let fname = document.querySelector('#fname');
+    let lname = document.querySelector('#lname');
+    let usuario = document.querySelector('#uname');
+    let senha = document.querySelector('#password');
+    let cSenha = document.querySelector('#confirm');
+    let email = document.querySelector('#email');
+    let data = document.querySelector('#date');
     let termos = document.querySelector("#terms");
     // checagens de campo
     let verifica = 0;
@@ -37,13 +37,20 @@ function checarInfo(){
         verifica++;
     }
     if(verifica == 0){
-        const usuario = {};
-        efetivarCadastro();
+        const novoUsuario = {
+            login: usuario.value,
+            senha: senha.value,
+            email: email.value,
+            nascimento: data.value,
+            nome: fname.value,
+            sobrenome: lname.value,
+        };
+        efetivarCadastro(novoUsuario);
     }
 }
 
 const certificaNascimento = nascimento => {
-    const string = String(nascimento).trim();
+    const string = String(nascimento.value).trim();
     if(string.length == 8){
         nascimento.style.border = "";
         return true;
@@ -55,7 +62,7 @@ const certificaNascimento = nascimento => {
 }
 
 const certificaEmail = email => {
-    if(email.trim()){
+    if(email.value.trim()){
         email.style.border = "";
         return true;
     }else {
@@ -65,7 +72,7 @@ const certificaEmail = email => {
 }
 
 const certificaSobrenome = sobrenome => {
-    if(sobrenome.trim()){
+    if(sobrenome.value.trim()){
         sobrenome.style.border = "";
         return true;
     }else {
@@ -75,7 +82,7 @@ const certificaSobrenome = sobrenome => {
 }
 
 const certificaNome = nome => {
-    if(nome.trim()){
+    if(nome.value.trim()){
         nome.style.border = "";
         return true;
     }else {
@@ -85,7 +92,7 @@ const certificaNome = nome => {
 }
 
 const certificaLogin = userName => {
-    if(userName.trim()){
+    if(userName.value.trim()){
         userName.style.border = "";
         return true;
     }else {
@@ -104,7 +111,7 @@ const certificaTermos = termos => {
 }
 
 const cetificaSenha = (senha, cSenha) => {
-    if(senha.trim() == cSenha.trim() && senha.trim()!=''){
+    if(senha.value.trim() == cSenha.value.trim() && senha.value.trim()!=''){
         senha.style.border = "";
         cSenha.style.border = "";
         return true;
@@ -115,26 +122,24 @@ const cetificaSenha = (senha, cSenha) => {
     }
 }
 
-function efetivarCadastro(){
-
-    let nome = $('#uname').val();
-    let nSenha = $('#password').val();
-    let nEmail = $('#email').val();
+function efetivarCadastro(usuario){
 
     let key = JSON.parse(localStorage.getItem('users'));
     let nid = (Object.keys(key.usuarios).length) + 1;
 
     let newUser = {
         id : nid,
-        login : nome,
-        senha : nSenha,
-        email : nEmail
+        login : usuario.login,
+        senha : usuario.senha,
+        email : usuario.email,
+        nome : usuario.nome,
+        sobrenome : usuario.sobrenome,
+        nascimento : usuario.nascimento
     }
 
 
     key.usuarios.push(newUser);
     localStorage.setItem('users', JSON.stringify(key));
 
-    alert('Cadastro efetivado');
     window.location.href = "../login/login.html";
 }

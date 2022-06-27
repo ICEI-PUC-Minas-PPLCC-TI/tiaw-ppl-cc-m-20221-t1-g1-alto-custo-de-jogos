@@ -1,7 +1,6 @@
 onload = () => {
-    
-    let loginStatus = localStorage.getItem('status');
-    
+    let loginStatus = JSON.parse(localStorage.getItem('status'));
+    const objDados = JSON.parse(localStorage.getItem('users'));
     if(loginStatus == null){
         // cria o stats de login
         // 0 - não está logado
@@ -9,7 +8,18 @@ onload = () => {
         localStorage.setItem('status', JSON.stringify(_obj));
     }
 
-    if(localStorage.getItem('users') == null){
+    if(loginStatus != 0){
+        const logado = objDados.usuarios.find(usuario => usuario.id == loginStatus.id);
+        const bemVindo = document.querySelector("#areaBemVindo");
+        bemVindo.innerHTML = `<p>Bem vindo ${logado.login}! <button id="sair">Sair</button></p>`;
+        document.querySelector("#sair").addEventListener('click', () => {
+            let _obj = { login : 0, id : 0};
+            localStorage.setItem('status', JSON.stringify(_obj));
+            window.location.reload();
+        });
+    }
+
+    if(objDados == null){
         let userKey = {
             usuarios : [
             ]
@@ -17,5 +27,6 @@ onload = () => {
     
         localStorage.setItem('users', JSON.stringify(userKey));
     }
+
 
 }
