@@ -6,6 +6,7 @@ var gameBd;     //array de jogos na local storage
 var gameOpt;    //lista de jogos disponíveis para cadastro
 
 var tempGameId;  //indice temporário para acriação de um jogo
+var bibId;
 
 // controle de status de login
 let loginStatus = JSON.parse(localStorage.getItem('status'));
@@ -128,29 +129,66 @@ function Jogo(nome, plataforma, capa, id){
 
 // função para criar o banco de dados na local storage
 function inicializarBd(){
-    
+   
+    let userInfo = JSON.parse(localStorage.getItem('status'));
     let getBd = localStorage.getItem('bd');
+   
     if(!getBd){
-        let bd = {  idSufix: 1, games:[]  };
+        let bd = {  
+            bibliotecas : [
+                {
+                    userId : userInfo.id,
+                    idSufix: 1, 
+                    games:[]  
+                }
+            ]
+        };
+        
         localStorage.setItem('bd', JSON.stringify(bd));
+        gameBd = bd;
+        bibId = 0;
+    }else{
+
+        let tempBd = JSON.parse(localStorage.getItem('bd'));
+        let size = Object.keys(tempBd.bibliotecas).length;
+
+        for(let i = 0; i < size; i++){
+            if(userInfo.id == tempBd.bibliotecas[i].userId){
+                gameBd = tempBd;
+                bibId = i;
+                return;
+            }
+        }
+
+        let newBib = {
+            userId : userInfo.id,
+            idSufix: 1,
+            games:[]
+        };
+
+        tempBd.bibliotecas.push(newBib);
+        localStorage.setItem('bd', JSON.stringify(tempBd));
+
+        gameBd = tempBd;
+        bibId = Object.keys(gameBd.bibliotecas).length - 1;
     }
 
-    gameBd = localStorage.getItem('bd');
-    gameBd = JSON.parse(gameBd);
+    // console.log('bibID = ' + bibId);
+    // console.log(gameBd);
 }
 
 // função para carregar os jogos da biblioteca
 // somente se existirem jogos cadastrados no local storage
 function initBiblioteca(){
 
-    let amount = gameBd.games.length;
+    let amount = Object.keys(gameBd.bibliotecas[bibId].games).length;
     if(amount == 0) return;
 
     for(let i = 0; i < amount; i++){
-        let nome = gameBd.games[i].nome;
-        let plataforma = gameBd.games[i].plataforma;
-        let capa = gameBd.games[i].capa;
-        let id = gameBd.games[i].id;
+        let nome = gameBd.bibliotecas[bibId].games[i].nome;
+        let plataforma = gameBd.bibliotecas[bibId].games[i].plataforma;
+        let capa = gameBd.bibliotecas[bibId].games[i].capa;
+        let id = gameBd.bibliotecas[bibId].games[i].id;
 
         let newL = document.createElement('li');
         let newT = document.createElement('img');
@@ -179,6 +217,8 @@ function checarGame(str, type){
     let match = false;
     let operation = document.getElementById('state-check').getAttribute('class');
 
+    let qtd = Object.keys(gameBd.bibliotecas[bibId].games).length;
+
     if(operation === 'cadastro'){
         for(let i = 0; i < gameOpt.disponiveis.length; i++){
             if(str == gameOpt.disponiveis[i].nome){
@@ -189,8 +229,8 @@ function checarGame(str, type){
         if(match === false) $('.name-field').css('background-color', 'red');
     }
     else{
-        for(let i = 0; i < gameBd.games.length; i++){
-            if(str == gameBd.games[i].nome){
+        for(let i = 0; i < qtd; i++){
+            if(str == gameBd.bibliotecas[bibId].games[i].nome){
                 $('.name-field').css('background-color', 'green');
                 match = true;
             }
@@ -205,6 +245,8 @@ function checarGame(str, type){
 function checarPlataforma(str, type){
     let match = false;
     let operation = document.getElementById('state-check').getAttribute('class');
+
+    let qtd = Object.keys(gameBd.bibliotecas[bibId].games).length;
 
     //index do jogo para checar a plataforma
     let game_id = -1;
@@ -229,8 +271,8 @@ function checarPlataforma(str, type){
         if(match === false) $('.platform-field').css('background-color', 'red');
     }
     else {
-        for(let i = 0; i < gameBd.games.length; i++){
-            if(str == gameBd.games[i].plataforma){
+        for(let i = 0; i < qtd; i++){
+            if(str == gameBd.bibliotecas[bibId].games[i].plataforma){
                 $('.platform-field').css('background-color', 'green');
                 match = true;
             }
@@ -240,16 +282,17 @@ function checarPlataforma(str, type){
 
     return match;
 }
-
+// função para remoção de jogos
 function removerGame(){
 
     let nome = $('.name-field').val();
     let plataforma = $('.platform-field').val();
 
     //encontra o index do jogo no banco de dados
+    let qtd = Object.keys(gameBd.bibliotecas[bibId].games).length;
     let index = -1;
-    for(let i = 0; i < gameBd.games.length; i++)
-        if(nome == gameBd.games[i].nome && plataforma == gameBd.games[i].plataforma)
+    for(let i = 0; i < qtd; i++)
+        if(nome == gameBd.bibliotecas[bibId].games[i].nome && plataforma == gameBd.bibliotecas[bibId].games[i].plataforma)
             index = i;
     
     // tratamento de erro
@@ -260,12 +303,12 @@ function removerGame(){
     }
 
     // pega o id do jogo
-    let gameId = gameBd.games[index].id;
+    let gameId = gameBd.bibliotecas[bibId].games[index].id;
     
     //remove os componentes do html
     let liList = document.querySelectorAll('ul#list li');
     let imgList = document.querySelectorAll('section img');
-    for(let i = 0; i < gameBd.games.length; i++){
+    for(let i = 0; i < qtd; i++){
         let liId = liList[i].getAttribute('id');
         let imgId = imgList[i].getAttribute('id');
 
@@ -274,12 +317,14 @@ function removerGame(){
     }
 
     //atualiza o banco de dados
-    gameBd.games.splice(index, 1);
+    gameBd.bibliotecas[bibId].games.splice(index, 1);
     localStorage.setItem('bd', JSON.stringify(gameBd));
 
     $('.menu-cadastro').css('visibility', 'hidden');
     
 }
+
+// função de cadastro de jogos
 function enviarGame(){
 
     let nome = $('.name-field').val();
@@ -311,8 +356,8 @@ function enviarGame(){
     }
 
     // criando o objeto do jogo
-    let jogo = new Jogo(nome, plataforma, gameOpt.disponiveis[tempGameId].capa, 'bd' + gameBd.idSufix++);
-    gameBd.games.push(jogo);
+    let jogo = new Jogo(nome, plataforma, gameOpt.disponiveis[tempGameId].capa, 'bd' + gameBd.bibliotecas[bibId].idSufix++);
+    gameBd.bibliotecas[bibId].games.push(jogo);
     localStorage.setItem('bd', JSON.stringify(gameBd))
 
 
