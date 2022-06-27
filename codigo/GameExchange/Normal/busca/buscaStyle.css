@@ -103,6 +103,18 @@ body{
 }
 /* #endregion */
 
+#areaBemVindo p{
+    color: white;
+}
+#areaBemVindo button{
+    background-color: brown;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
 /* Deskyop */
 @media screen and (min-width : 651px){
     

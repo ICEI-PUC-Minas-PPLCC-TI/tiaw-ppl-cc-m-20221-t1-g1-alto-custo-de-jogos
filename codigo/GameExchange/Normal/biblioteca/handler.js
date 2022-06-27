@@ -10,11 +10,12 @@ var bibId;
 
 // controle de status de login
 let loginStatus = JSON.parse(localStorage.getItem('status'));
+const objDados = JSON.parse(localStorage.getItem('users'));
 let statusCode = loginStatus.login;
 if(statusCode == 0){
     alert("Usuário não identificado");
     window.location.href = "../index.html";
-}
+} 
 
 onload = () => {
     // eventos de controle
@@ -114,6 +115,17 @@ onload = () => {
         checarPlataforma($('.platform-field').val());
     };
     
+    // mensagem de bem-vindo
+    const logado = objDados.usuarios.find(usuario => usuario.id == loginStatus.id);
+    const bemVindo = document.querySelector("#areaBemVindo");
+    bemVindo.innerHTML = `<p>Bem vindo ${logado.login}! <button id="sair">Sair</button></p>`;
+    document.querySelector("#sair").addEventListener('click', () => {
+        let _obj = { login : 0, id : 0};
+        localStorage.setItem('status', JSON.stringify(_obj));
+        window.location.href = '../index.html';
+    });
+
+
     // inicializações
     inicializarBd();
     initBiblioteca();

@@ -183,6 +183,18 @@ div.buttons{
 }
 /**/
 
+#areaBemVindo p{
+    color: white;
+}
+#areaBemVindo button{
+    background-color: brown;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
 /* definição das thumbs e listas*/
 section img{
     height: 120px;
