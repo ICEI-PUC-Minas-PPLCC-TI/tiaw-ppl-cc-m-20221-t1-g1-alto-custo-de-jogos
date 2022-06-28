@@ -105,12 +105,18 @@ onload = () => {
     $.getJSON('../banco_jogos.json', function(json){
         gameOpt = json;
     });
+    
+    const procuraJogo = jogo => jogo.nome.toLowerCase().includes(inputNome.value.toLowerCase());
 
     // evento de entrada de texto
     // quando o usuário digitar nos campos de texto, estes eventos devem ser chamados
-    document.querySelector('.name-field').onchange = () => {
-        checarGame($('.name-field').val());
-    };
+    const inputNome = document.querySelector('.name-field');
+    inputNome.addEventListener('input', () => {
+        console.log(gameOpt.disponiveis.filter(procuraJogo));
+    });
+    // document.querySelector('.name-field').onchange = () => {
+    //     checarGame($('.name-field').val());    
+    // };
     document.querySelector('.platform-field').onchange = () => {
         checarPlataforma($('.platform-field').val());
     };

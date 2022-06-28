@@ -168,6 +168,9 @@ footer p{
     border-radius: 20px;
     border: none;
 }
+.butao:hover {
+    background-color: rgb(123, 33, 33);
+}
 
 /* #region media queries */
 @media screen and (min-width : 551px) {
