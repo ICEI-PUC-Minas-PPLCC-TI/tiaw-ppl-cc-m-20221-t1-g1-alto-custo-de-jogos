@@ -8,6 +8,13 @@
         <script src="../jquery-3.6.0.min.js"></script>
     </head>
     <body>
+        <!-- autocomplete info-->
+        <datalist id="game-input-autocomplete">         
+        </datalist>
+        <datalist id="platform-input-autocomplete">
+        </datalist>
+
+        <!-- cabeçalho -->
         <header>
             <div class="top-menu">
                 <div class="logo">
@@ -31,7 +38,7 @@
                         <li>|</li>
                         <li><a href="lib.html">Biblioteca</a></li>
                         <li>|</li>
-                        <li>Página de troca</li>
+                        <li><a href="../trocas/troca.html">Página de troca</a></li>
                         <li>|</li>
                         <li><a href="../busca/busca.html">Lista de jogos</a></li>
                     </ul>
@@ -63,14 +70,14 @@
                 <!-- div para checagem de estado -->
                 <div id="state-check"></div>
                 <!---->
-                <input class="name-field" type="text" placeholder="ex: Sonic Mania">
+                <input class="name-field" type="text" placeholder="ex: Sonic Mania" list="game-input-autocomplete">
             </div>
             <div class="platform-input">
                 <h3>Plataforma</h3>
                 <!-- div para checagem de estado -->
                 <div id="state-check"></div>
                 <!---->
-                <input class="platform-field" type="text" placeholder="ex: PC">
+                <input class="platform-field" type="text" placeholder="ex: PC" list="platform-input-autocomplete">
             </div>
             <input class="submit" type="submit">
             <button class="cancel">Cancelar</button>

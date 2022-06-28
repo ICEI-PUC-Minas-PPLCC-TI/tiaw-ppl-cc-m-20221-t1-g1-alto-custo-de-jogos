@@ -114,6 +114,9 @@ body{
     border-radius: 20px;
     border: none;
 }
+#areaBemVindo button:hover{
+    cursor: pointer;
+}
 
 /* Deskyop */
 @media screen and (min-width : 651px){

@@ -6,7 +6,7 @@ var gameBd;     //array de jogos na local storage
 var gameOpt;    //lista de jogos disponíveis para cadastro
 
 var tempGameId;  //indice temporário para acriação de um jogo
-var bibId;
+var bibId;       //identificador da biblioteca deste usuário
 
 // controle de status de login
 let loginStatus = JSON.parse(localStorage.getItem('status'));
@@ -18,6 +18,29 @@ if(statusCode == 0){
 } 
 
 onload = () => {
+    // banco de dados dos jogos possíveis para cadasto
+    $.getJSON('../banco_jogos.json', function(json){
+        gameOpt = json;
+    });
+
+    // recupera os elementos do html
+    gameList = document.querySelector('#list');
+    thumbSect = document.querySelector('#thumbs');
+
+    // mensagem de bem-vindo
+    const logado = objDados.usuarios.find(usuario => usuario.id == loginStatus.id);
+    const bemVindo = document.querySelector("#areaBemVindo");
+    bemVindo.innerHTML = `<p>Bem vindo ${logado.login}! <button id="sair">Sair</button></p>`;
+    document.querySelector("#sair").addEventListener('click', () => {
+        let _obj = { login : 0, id : 0};
+        localStorage.setItem('status', JSON.stringify(_obj));
+        window.location.href = '../index.html';
+    });
+
+    // inicializações
+    inicializarBd();
+    initBiblioteca();
+
     // eventos de controle
     // adição e remoção de jogos, definição do menu e campos de texto
     document.querySelector('#add-game').onclick = () => { 
@@ -51,6 +74,16 @@ onload = () => {
             campoN.addClass('cadastro');
             campoP.addClass('cadastro');
         }
+
+         //criando o autocomplete de jogos
+        let qtdJogos = Object.keys(gameOpt.disponiveis).length;
+        let dataList = document.querySelector('#game-input-autocomplete');
+        dataList.innerHTML = "";
+        for(let i = 0; i < qtdJogos; i++){
+            let newOption = document.createElement('option');
+            newOption.setAttribute('value', gameOpt.disponiveis[i].nome);
+            dataList.append(newOption);
+        }
     };
     document.querySelector('#remove-game').onclick = () => {
         $('.menu-cadastro').css('visibility', 'visible'); 
@@ -83,6 +116,16 @@ onload = () => {
             campoN.addClass('remover');
             campoP.addClass('remover');
         }
+
+        //criando o autocomplete de jogos
+        let qtdJogos = Object.keys(gameBd.bibliotecas[bibId].games).length;
+        let dataList = document.querySelector('#game-input-autocomplete');
+        dataList.innerHTML = "";
+        for(let i = 0; i < qtdJogos; i++){
+            let newOption = document.createElement('option');
+            newOption.setAttribute('value', gameBd.bibliotecas[bibId].games[i].nome);
+            dataList.append(newOption);
+        }
     };
     document.querySelector('.cancel').onclick = () => {
         $('.name-field').val('');
@@ -97,39 +140,15 @@ onload = () => {
     document.querySelector('.submit').onclick = resolverMenu;  
     $('.menu-cadastro').css('visibility', 'hidden');
     
-    // recupera os elementos do html
-    gameList = document.querySelector('#list');
-    thumbSect = document.querySelector('#thumbs');
-    
-    // banco de dados dos jogos possíveis para cadasto
-    $.getJSON('../banco_jogos.json', function(json){
-        gameOpt = json;
-    });
-
     // evento de entrada de texto
     // quando o usuário digitar nos campos de texto, estes eventos devem ser chamados
-
     document.querySelector('.name-field').onchange = () => {
-        checarGame($('.name-field').val());    
+        checarGame($('.name-field').val());
     };
     document.querySelector('.platform-field').onchange = () => {
         checarPlataforma($('.platform-field').val());
     };
-    
-    // mensagem de bem-vindo
-    const logado = objDados.usuarios.find(usuario => usuario.id == loginStatus.id);
-    const bemVindo = document.querySelector("#areaBemVindo");
-    bemVindo.innerHTML = `<p>Bem vindo ${logado.login}! <button id="sair">Sair</button></p>`;
-    document.querySelector("#sair").addEventListener('click', () => {
-        let _obj = { login : 0, id : 0};
-        localStorage.setItem('status', JSON.stringify(_obj));
-        window.location.href = '../index.html';
-    });
 
-
-    // inicializações
-    inicializarBd();
-    initBiblioteca();
 }
 
 // função construtora de jogos
@@ -140,6 +159,7 @@ function Jogo(nome, plataforma, capa, id){
     this.id = id;
 }
 
+//#region inicializadores
 // função para criar o banco de dados na local storage
 function inicializarBd(){
    
@@ -215,6 +235,7 @@ function initBiblioteca(){
         thumbSect.appendChild(newT);
     }
 }
+//#endregion
 
 // função controladora do menu
 // determina se irá adicionar ou remover o jogo
@@ -225,8 +246,9 @@ function resolverMenu(){
     else removerGame();
 }
 
+//#region checagens_de_info
 // checa se o game está disponível para cadastro ou para remoção
-function checarGame(str, type){
+function checarGame(str){
     let match = false;
     let operation = document.getElementById('state-check').getAttribute('class');
 
@@ -237,25 +259,51 @@ function checarGame(str, type){
             if(str == gameOpt.disponiveis[i].nome){
                 $('.name-field').css('background-color', 'green');
                 match = true;
+
+                //criando o autocomplete para as plataformas
+                let qtdPlataformas = Object.keys(gameOpt.disponiveis[i].plataformas).length;
+                let dataList = document.querySelector('#platform-input-autocomplete');
+                dataList.innerHTML = '';
+                for(let j = 0; j < qtdPlataformas; j++){
+                    let newOption = document.createElement('option');
+                    newOption.setAttribute('value', gameOpt.disponiveis[i].plataformas[j]);
+                    dataList.append(newOption);
+                }
             }
         }
-        if(match === false) $('.name-field').css('background-color', 'red');
+        if(match === false){
+            $('.name-field').css('background-color', 'red');
+            let dataList = document.querySelector('#platform-input-autocomplete');
+            dataList.innerHTML = '';
+        } 
     }
     else{
         for(let i = 0; i < qtd; i++){
             if(str == gameBd.bibliotecas[bibId].games[i].nome){
                 $('.name-field').css('background-color', 'green');
                 match = true;
+
+                //criando o autocomplete para as plataformas
+                let dataList = document.querySelector('#platform-input-autocomplete');
+                dataList.innerHTML = '';
+                let newOption = document.createElement('option');
+                newOption.setAttribute('value', gameBd.bibliotecas[bibId].games[i].plataforma);
+                dataList.append(newOption);
             }
         }
-        if(match === false) $('.name-field').css('background-color', 'red');
+        if(match === false){
+            $('.name-field').css('background-color', 'red');
+            let dataList = document.querySelector('#platform-input-autocomplete');
+            dataList.innerHTML = '';
+        } 
     }
 
+   
     
     return match;
 }
 // checa se a plataforma existe
-function checarPlataforma(str, type){
+function checarPlataforma(str){
     let match = false;
     let operation = document.getElementById('state-check').getAttribute('class');
 
@@ -295,6 +343,9 @@ function checarPlataforma(str, type){
 
     return match;
 }
+//#endregion
+
+//#region adição_e_remoção
 // função para remoção de jogos
 function removerGame(){
 
@@ -391,3 +442,4 @@ function enviarGame(){
     $('.menu-cadastro').css('visibility', 'hidden');
     tempGameId = -1;    //valor padrão
 }
+//#endregion

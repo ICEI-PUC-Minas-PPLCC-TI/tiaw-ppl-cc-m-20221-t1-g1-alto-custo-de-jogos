@@ -168,8 +168,8 @@ footer p{
     border-radius: 20px;
     border: none;
 }
-.butao:hover {
-    background-color: rgb(123, 33, 33);
+#areaBemVindo button:hover{
+    cursor: pointer;
 }
 
 /* #region media queries */

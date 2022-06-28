@@ -194,6 +194,9 @@ div.buttons{
     border-radius: 20px;
     border: none;
 }
+#areaBemVindo button:hover{
+    cursor: pointer;
+}
 
 /* definição das thumbs e listas*/
 section img{

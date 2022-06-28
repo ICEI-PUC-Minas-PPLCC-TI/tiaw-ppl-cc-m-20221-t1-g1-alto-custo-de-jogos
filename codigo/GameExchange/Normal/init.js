@@ -11,7 +11,7 @@ onload = () => {
     if(loginStatus.login != 0){
         const logado = objDados.usuarios.find(usuario => usuario.id == loginStatus.id);
         const bemVindo = document.querySelector("#areaBemVindo");
-        bemVindo.innerHTML = `<p>Bem vindo ${logado.login}! <button id="sair" class="butao">Sair</button></p>`;
+        bemVindo.innerHTML = `<p>Bem vindo ${logado.login}! <button id="sair">Sair</button></p>`;
         document.querySelector("#sair").addEventListener('click', () => {
             let _obj = { login : 0, id : 0};
             localStorage.setItem('status', JSON.stringify(_obj));
