@@ -107,10 +107,12 @@ main > h2{
 .game-selector{
     display: flex;
     justify-content: center;
+    align-items: center;
 
     max-width: 800px;
     margin: 0px auto;
     padding-top: 30px;
+    padding-bottom: 20px;
     border-radius: 30px;
 
     background-color: rgba(20, 20, 20, 0.8);
@@ -144,14 +146,52 @@ section > img{
     width: 100px;
     height: 100px;
 }
-/**/
+
+.game-selector div input{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
 .submit-button{
-    margin-left: 48vw;
+    display: block;
+    margin: 10px auto 0px;
+    padding: 10px 20px;
+    
+    background-color: brown;
+    color: white;
+    
+    font-size: large;
+
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .submit-button:hover{
     cursor: pointer;
 }
+
+.info{
+    max-width: 800px;
+    margin: 10px auto 0px;
+
+    padding-bottom: 20px;
+    border-radius: 30px;
+
+    background-color: rgba(20, 20, 20, 0.8);
+    color: white;
+}
+
+.info h2{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.list-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/**/
 
 /* rodapé */
 footer {

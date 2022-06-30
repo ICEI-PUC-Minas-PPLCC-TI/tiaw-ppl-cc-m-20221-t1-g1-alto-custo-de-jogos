@@ -26,7 +26,6 @@ onload = () => {
 
     // requisitando a biblioteca global
     gameBib = JSON.parse(localStorage.getItem('bd'));
-    console.log(gameBib);
     
     // definindo o usuario
     let status = JSON.parse(localStorage.getItem('status'));
@@ -68,13 +67,9 @@ onload = () => {
     // eventos de controle
     document.querySelector('.lib-game-input').onchange = getPlataformaBiblioteca;
     document.querySelector('.new-game-input').onchange = updatePlataformaNew;
+    document.querySelector('.submit-button').onclick = trocarJogos;
 }
 
-// autocomplete para jogos da biblioteca
-// também faz o autocomplete da plataforma (já que é única)
-function updateJogosBiblioteca(){
-
-}
 // autocomplete para plataforma dos jogos novos
 // lista de jogos novos é fixa
 function updatePlataformaNew(){
@@ -133,6 +128,55 @@ function getPlataformaBiblioteca(){
 }
 
 function trocarJogos(){
+
+    // recuperando informações na biblioteca
+    let gameName = $('.lib-game-input').val();
+    let gamePlatform = $('.lib-platform-input').val();
+    let qtdJogos = Object.keys(gameBib.bibliotecas[bibId].games).length;
+
+    // checagem de erro 1: Campos vazios
+    if(gameName == '' || gamePlatform == ''){
+        alert('Campos vazios. Escolha os jogos e tente novamente');
+        return;
+    }
+
+    // indice do jogo na biblioteca
+    let gameIndex;
+
+    for(let i = 0; i < qtdJogos; i++){
+        if(gameBib.bibliotecas[bibId].games[i].nome == gameName){
+            if(gameBib.bibliotecas[bibId].games[i].plataforma == gamePlatform){
+                gameIndex = i;
+            }
+        }
+    }
+
+    // removendo o jogo da biblioteca
+    gameBib.bibliotecas[bibId].games.splice(gameIndex, 1);
+
+    // adicionando jogo selecionado na biblioteca
+    let newGameName = $('.new-game-input').val();
+    let newGamePlatform = $('.new-platform-input').val();
+
+    // checagem de erro 2: Campos vazios
+    if(newGameName == '' || newGamePlatform == ''){
+        alert('Campos vazios. Escolha os jogos e tente novamente');
+        return;
+    }
+
+    // criando objeto do novo jogo
+    let novo_jogo = {
+        nome : newGameName,
+        plataforma : newGamePlatform,
+        id : 'bd' + gameBib.bibliotecas[bibId].idSufix++,
+        capa : gameOpt.disponiveis.find(game => game.nome == newGameName).capa
+    }
+
+    // enviando novo banco de dados
+    gameBib.bibliotecas[bibId].games.push(novo_jogo);
+    localStorage.setItem('bd', JSON.stringify(gameBib));
+
+    alert('Troca realizada com sucesso');
 
     window.location.reload();
 }
