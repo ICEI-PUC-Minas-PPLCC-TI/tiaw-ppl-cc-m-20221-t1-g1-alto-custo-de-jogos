@@ -3,8 +3,6 @@
         {
             "nome" : "Grand Theft Auto 5",
             "plataformas" : [
-                "Xbox 360",
-                "Ps3",
                 "Xbox One",
                 "Xbox Series X",
                 "Ps4",
@@ -51,14 +49,17 @@
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/8a27d37cd175197e87c02a7fc7eb192d.png"
         },
         {
-            "nome" : "Sonic Mania",
+            "nome" : "Elden Ring",
             "plataformas" : [
                 "Ps4",
                 "Xbox One",
-                "PC"
+                "PC",
+                "Ps5",
+                "Xbox Series X"
             ],
-            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d8e9010aff2b4bb497d6288af628e23f.png"
-        },
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/6c058d152880fa8595cd3577ffcc25f0.jpg"
+            
+        },     
         {
             "nome" : "Need for Speed",
             "plataformas" : [
@@ -121,13 +122,14 @@
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/6abd5c03e1414f4600add2d7956bb442.png"
         },
         {
-            "nome" : "Minecraft",
+            "nome" : "Death Stranding",
             "plataformas" : [
                 "Ps4",
-                "Xbox One",
+                "Ps5",
                 "PC"
             ],
-            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/a73027901f88055aaa0fd1a9e25d36c7.png"
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/a4c88bd827bdad1f65648774ca1a8c4c.png"
+            
         },
         {
             "nome" : "Resident Evil 7 Biohazard",
@@ -151,13 +153,14 @@
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/ccb9ccb1d01d126e1fc0f9524f8ca0e0.png"
         },
         {
-            "nome" : "Stardew Valley",
+            "nome" : "Watch Dogs 2",
             "plataformas" : [
-                "PC",
+                "Xbox One",
                 "Ps4",
-                "Xbox One"
+                "PC"
             ],
-          "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/996e24639b91722571c81723760023e0.png"
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/3ae113b8a46fae273df332bf6ae39a0e.png"
+            
         },
         {
             "nome" : "The Witcher 3: Wild Hunt",
@@ -173,9 +176,7 @@
             "plataformas" : [
                 "Ps4",
                 "Xbox One",
-                "PC",
-                "Xbox 360",
-                "Ps3"
+                "PC"
             ],
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/81eb8c3166ba84d9de66eb843738134b.png"
         },
@@ -185,13 +186,6 @@
                 "PC"
             ],
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/f119555ebb5f2482340618251c49de4d.png"
-        },
-        {
-            "nome" : "World War Z",
-            "plataformas" : [
-                "PC"
-            ],
-            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d8e9010aff2b4bb497d6288af628e23f.png"
         },
         {
             "nome" : "Maneater",
@@ -273,12 +267,12 @@
             
         },
         {
-            "nome" : "The Last of Us 2",
+            "nome" : "The Last of Us Part 2",
             "plataformas" : [
                 "Ps4",
                 "PC"
             ],
-            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/55655e3296788419699ec577c7a76f6b.png"
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/3a96a1164364c063f40ce33aaf971783.png"
             
         },
         {
@@ -298,7 +292,7 @@
                 "Xbox One",
                 "PC"
             ],
-            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/924b0f7549afc3b442817d635c283ba9.webp"
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/06cbf59777880dfb10eeec416060f163.jpg"
             
         },
         {
@@ -312,16 +306,6 @@
             
         },
         {
-            "nome" : "ReCore",
-            "plataformas" : [
-                "Ps4",
-                "Xbox One",
-                "PC"
-            ],
-            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/4d85adda62b11f76849b10a227a6ed69.jpg"
-            
-        },
-        {
             "nome" : "Dragon Age Inquisition",
             "plataformas" : [
                 "Ps4",
@@ -330,6 +314,15 @@
             ],
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/6b7e5dd8e735ac7504cd75e04acc097b.png"
             
+        },
+        {
+            "nome" : "Minecraft",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/a73027901f88055aaa0fd1a9e25d36c7.png"
         },
         {
             "nome" : "Bioshock",
@@ -400,6 +393,75 @@
             ],
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/1310027e3cc8905b006af624e99937d0.png"
             
+        },
+        {
+            "nome" : "Destiny",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/7ce8d085f2949d320015a3fd53c2f74b.png"
+            
+        },
+        {
+            "nome" : "Assassin's Creed Odyssey",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/ddf36ce0658efd6eaaaddb4aa9de7c7e.png"
+            
+        },
+        {
+            "nome" : "Sonic Mania",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d8e9010aff2b4bb497d6288af628e23f.png"
+        },
+        {
+            "nome" : "Dark Souls 3",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/9085f5ef67f2f7f0f38e869ffb5016a1.png"
+            
+        },
+        {
+            "nome" : "Uncharted 4: A Thief's End",
+            "plataformas" : [
+                "Ps4",
+                "Ps5",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/ea60878f56015af940226ebfc5c0296c.png"
+            
+        },
+        {
+            "nome" : "Gears 5",
+            "plataformas" : [
+                "Xbox One",
+                "Xbox Series X",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/170c24439fecca3c09ea7adc5344d829.png"
+            
+        },
+        {
+            "nome" : "Stardew Valley",
+            "plataformas" : [
+                "PC",
+                "Ps4",
+                "Xbox One"
+            ],
+          "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/996e24639b91722571c81723760023e0.png"
         }
+        
     ]
 }
