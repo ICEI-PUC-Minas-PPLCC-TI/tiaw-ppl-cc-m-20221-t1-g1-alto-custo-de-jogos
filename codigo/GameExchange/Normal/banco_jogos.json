@@ -260,7 +260,146 @@
                 "PC"
             ],
             "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/733fb39ab60bf067bdb17038419b9551.png"
+            
+        },
+        {
+            "nome" : "The Last of Us",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/849d7b8124e44421cf640466299db4dc.png"
+            
+        },
+        {
+            "nome" : "The Last of Us 2",
+            "plataformas" : [
+                "Ps4",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/55655e3296788419699ec577c7a76f6b.png"
+            
+        },
+        {
+            "nome" : "Dead Dead Redemption",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/a9f9ef04f6c8bcc449084e0cc4183cf7.png"
+            
+        },
+        {
+            "nome" : "Battlefield 2042",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/924b0f7549afc3b442817d635c283ba9.webp"
+            
+        },
+        {
+            "nome" : "Rainbow Six Siege",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/6df0f11ac980d2c59e5b4dab6a8e7611.png"
+            
+        },
+        {
+            "nome" : "ReCore",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/4d85adda62b11f76849b10a227a6ed69.jpg"
+            
+        },
+        {
+            "nome" : "Dragon Age Inquisition",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/6b7e5dd8e735ac7504cd75e04acc097b.png"
+            
+        },
+        {
+            "nome" : "Bioshock",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/e2a6b4560a2004ec7d1e9f4f407734ef.png"
+            
+        },
+        {
+            "nome" : "Bioshock 2",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/744432a37c7d535703a9e5e722ce75e0.png"
+            
+        },
+        {
+            "nome" : "Bioshock Infinite",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/8d6fa6ad41c23aa2ae2357c8beb39bcd.jpg"
+            
+        },
+        {
+            "nome" : "Fallout 4",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/b5209fa882c43a2d47dc6f0243e9d64f.png"
+            
+        },
+        {
+            "nome" : "Ghost of tsushima",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/583f7f4ba7f952d0eb6cc16d1cd5681f.png"
+            
+        },
+        {
+            "nome" : "Back 4 Blood",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/a81458a100984a00515a06d4a1317c11.png"
+            
+        },
+        {
+            "nome" : "Mortal Kombat X",
+            "plataformas" : [
+                "Ps4",
+                "Xbox One",
+                "PC"
+            ],
+            "capa" : "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/1310027e3cc8905b006af624e99937d0.png"
+            
         }
-
     ]
 }
