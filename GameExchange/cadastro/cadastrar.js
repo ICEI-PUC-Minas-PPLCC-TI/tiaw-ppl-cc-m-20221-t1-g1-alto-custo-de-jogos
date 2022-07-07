@@ -143,5 +143,6 @@ function efetivarCadastro(usuario){
     key.usuarios.push(newUser);
     localStorage.setItem('users', JSON.stringify(key));
 
+    alert("Cadastro realizado com sucesso");
     window.location.href = "../login/login.html";
 }

@@ -23,6 +23,16 @@ onload = () => {
     if(objDados == null){
         let userKey = {
             usuarios : [
+                {
+                    id : 1,
+                    login : "admin",
+                    senha : "123",
+                    email : "admin@email.com",
+                    nome : "Administrador",
+                    sobrenome : "",
+                    nascimento : "",
+                    assinante : 1
+                }
             ]
         }
         localStorage.setItem('users', JSON.stringify(userKey));
