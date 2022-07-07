@@ -33,7 +33,7 @@ onload = () => {
         let gameQtd = Object.keys(json.disponiveis);
 
         for(let i = 0; i < gameQtd.length; i++){
-            $('.game-thumbs').append($(`<img src="${json.disponiveis[i].capa}">`));
+            $('.game-thumbs').append($(`<a href="../info/info.html?index=${i}"><img src="${json.disponiveis[i].capa}"></a>`));
             $('.game-list ul').append($(`<li>${json.disponiveis[i].nome}</li>`));
         }
     });
